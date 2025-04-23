@@ -1,0 +1,2 @@
+# K23CNT3_DinhTienTrien_NetCore
+K23CNT3_DinhTienTrien_NetCore
