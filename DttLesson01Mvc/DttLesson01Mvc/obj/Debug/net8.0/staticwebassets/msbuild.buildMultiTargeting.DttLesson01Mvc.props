@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DttLesson01Mvc.props" />
+</Project>
