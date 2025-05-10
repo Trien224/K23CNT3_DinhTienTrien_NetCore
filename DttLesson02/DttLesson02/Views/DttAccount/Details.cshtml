@@ -1,0 +1,20 @@
+﻿@model DttLesson02.Models.DttAccount
+
+@{
+    ViewData["Title"] = "Account Details";
+}
+
+<div class="card mt-4">
+    <div class="card-header">
+        <h3>@Model.Name</h3>
+    </div>
+    <div class="card-body">
+        <img src="@Model.Avatar" alt="@Model.Name" class="img-thumbnail mb-3" style="max-width: 200px;" />
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p><strong>Phone:</strong> @Model.Phone</p>
+        <p><strong>Address:</strong> @Model.Address</p>
+        <p><strong>Bio:</strong> @Model.Bio</p>
+        <p><strong>Gender:</strong> @(Model.Gender == 1 ? "Male" : "Female")</p>
+        <p><strong>Birthday:</strong> @Model.Birthday.ToString("dd/MM/yyyy")</p>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "GetProducts";
+}
+<h2>Dữ liệu lấy ra từ ViewBag</h2>
+<p>Mã sản phẩm: @ViewBag.product.ProductId</p>
+<p>Tên sản phẩm: @ViewBag.product.ProductName</p>
+<p>Năm sản suất: @ViewBag.product.YearRelease</p>
+<p>Giá: @ViewBag.product.Price</p>
+<h2>Dữ liệu lấy ra từ ViewData</h2>
+
+@{
+
+    //Phải chuyển đổi về kiểu Product
+
+    var product = ViewData["ProductVD"] as DttLesson02.Models.Product;
+
+}
+<p>Mã sản phẩm: @product.ProductId</p>
+<p>Tên sản phẩm: @product.ProductName</p>
+<p>Năm sản xuất: @product.YearRelease</p>
+<p>Giá: @product.Price</p>
