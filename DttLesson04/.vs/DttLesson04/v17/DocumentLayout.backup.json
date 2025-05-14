@@ -1,0 +1,55 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DttLesson04\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{962CB3F1-C36B-42A8-A3FA-3768AD774F76}|DttLesson04\\DttLesson04.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dttlesson04\\dttlesson04\\views\\dtthome\\dttabout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{962CB3F1-C36B-42A8-A3FA-3768AD774F76}|DttLesson04\\DttLesson04.csproj|solutionrelative:dttlesson04\\views\\dtthome\\dttabout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 375,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DttAbout.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DttLesson04\\DttLesson04\\Views\\DttHome\\DttAbout.cshtml",
+              "RelativeDocumentMoniker": "DttLesson04\\Views\\DttHome\\DttAbout.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DttLesson04\\DttLesson04\\Views\\DttHome\\DttAbout.cshtml*",
+              "RelativeToolTip": "DttLesson04\\Views\\DttHome\\DttAbout.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-14T13:41:19.958Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 516,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

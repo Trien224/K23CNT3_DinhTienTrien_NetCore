@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DttLesson04.Models.DttBook>
+@{
+    ViewData["Title"] = "List Book";
+}
+
+<h1>Danh Sách Thông Tin Sách</h1>
+
+<a asp-action="DttTao" class="btn btn-primary mb-3">Thêm sách mới</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>BookId</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Page</th>
+            <th>Thao Tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var DttItem in Model)
+        {
+            <tr>
+                <td>@DttItem.DttId</td>
+                <td>@DttItem.DttTitle</td>
+                <td>@DttItem.DttDescription</td>
+                <td style="text-align:center">
+                    <img src="@DttItem.DttImage" alt="@DttItem.DttTitle" width="100" />
+                </td>
+                <td>@DttItem.DttPrice</td>
+                <td>@DttItem.DttPage</td>
+                <td>
+              
+                    <a asp-action="DttSua" asp-route-id="@DttItem.DttId" class="btn btn-warning btn-sm">✏️ Sửa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

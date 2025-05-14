@@ -1,0 +1,35 @@
+﻿@model DttLesson04.Models.DttBook
+
+@{
+    ViewData["Title"] = "Thêm mới sách";
+}
+
+<h2>Thêm mới sách</h2>
+
+<form asp-action="DttTao" method="post">
+    <div>
+        <label asp-for="DttId"></label>
+        <input asp-for="DttId" />
+    </div>
+    <div>
+        <label asp-for="DttTitle"></label>
+        <input asp-for="DttTitle" />
+    </div>
+    <div>
+        <label asp-for="DttDescription"></label>
+        <input asp-for="DttDescription" />
+    </div>
+    <div>
+        <label asp-for="DttImage"></label>
+        <input asp-for="DttImage" />
+    </div>
+    <div>
+        <label asp-for="DttPrice"></label>
+        <input asp-for="DttPrice" type="number" />
+    </div>
+    <div>
+        <label asp-for="DttPage"></label>
+        <input asp-for="DttPage" type="number" />
+    </div>
+    <button type="submit">Thêm sách</button>
+</form>
