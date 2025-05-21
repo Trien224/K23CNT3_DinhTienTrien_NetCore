@@ -1,0 +1,31 @@
+﻿@model List<DttLesson05.Models.DataModels.DttMember>
+
+@{
+    ViewData["Title"] = "Danh Sách Nhân Viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Mã Sinh Viên</th>
+			<th>Tài Khoản </th>
+			<th>Họ&Tên</th>
+			<th>Mật Khẩu</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.DttMemberId</td>
+                <td>@member.DttUsername</td>
+                <td>@member.DttFullName</td>
+                <td>@member.DttPassword</td>
+                <td>@member.DttEmail</td>
+            </tr>
+        }
+    </tbody>
+</table>
