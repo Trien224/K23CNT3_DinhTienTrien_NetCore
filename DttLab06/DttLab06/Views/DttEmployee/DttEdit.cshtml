@@ -1,0 +1,6 @@
+﻿@model DttLab06.Models.DttEmployee
+<form asp-action="DttEdit" method="post">
+    @Html.HiddenFor(m => m.DttId)
+    @Html.Partial("_DttEmployeeForm", Model)
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+</form>

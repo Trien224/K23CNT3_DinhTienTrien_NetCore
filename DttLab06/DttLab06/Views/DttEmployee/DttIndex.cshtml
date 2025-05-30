@@ -1,0 +1,38 @@
+﻿@model List<DttEmployee>
+@{
+    ViewData["Title"] = "Danh sách nhân viên";
+}
+<h2>Danh sách nhân viên</h2>
+<a href="/DttEmployee/DttCreate" class="btn btn-primary mb-2">Thêm nhân viên</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Ngày sinh</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Lương</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.DttId</td>
+                <td>@emp.DttName</td>
+                <td>@emp.DttBirthDay.ToShortDateString()</td>
+                <td>@emp.DttEmail</td>
+                <td>@emp.DttPhone</td>
+                <td>@emp.DttSalary</td>
+                <td>@emp.DttStatus ? "Đang làm" : "Nghỉ việc")</td>
+                <td>
+                    <a href="/DttEmployee/DttEdit?id=@emp.DttId" class="btn btn-warning btn-sm">Sửa</a>
+                    <a href="/DttEmployee/DttDelete?id=@emp.DttId" class="btn btn-danger btn-sm">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

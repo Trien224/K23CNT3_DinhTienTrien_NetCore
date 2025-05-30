@@ -1,0 +1,5 @@
+﻿@model DttLab06.Models.DttEmployee
+<form asp-action="DttCreateSubmit" method="post">
+    @Html.Partial("_DttEmployeeForm", Model)
+    <button type="submit" class="btn btn-primary">Thêm</button>
+</form>
