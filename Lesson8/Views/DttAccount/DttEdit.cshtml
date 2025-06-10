@@ -1,0 +1,67 @@
+﻿@model Lesson8.Models.DttAccount
+
+<h1>DttEdit</h1>
+
+<h4>DttAccount</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DttEdit" asp-route-id="@Model.DttId">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DttId" class="control-label"></label>
+                <input asp-for="DttId" class="form-control" readonly />
+                <span asp-validation-for="DttId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DttName" class="control-label"></label>
+                <input asp-for="DttName" class="form-control" />
+                <span asp-validation-for="DttName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DttBirthDay" class="control-label"></label>
+                <input asp-for="DttBirthDay" class="form-control" type="date" />
+                <span asp-validation-for="DttBirthDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DttEmail" class="control-label"></label>
+                <input asp-for="DttEmail" class="form-control" />
+                <span asp-validation-for="DttEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DttPhone" class="control-label"></label>
+                <input asp-for="DttPhone" class="form-control" />
+                <span asp-validation-for="DttPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DttAddress" class="control-label"></label>
+                <input asp-for="DttAddress" class="form-control" />
+                <span asp-validation-for="DttAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DttPassword" class="control-label"></label>
+                <input asp-for="DttPassword" class="form-control" />
+                <span asp-validation-for="DttPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DttStatus" class="control-label"></label>
+                <input asp-for="DttStatus" class="form-control" />
+                <span asp-validation-for="DttStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DttAvatar" class="control-label"></label>
+                <input asp-for="DttAvatar" class="form-control" />
+                <span asp-validation-for="DttAvatar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="DttIndex" class="btn btn-secondary">Back to List</a>
+
+</div>
+
