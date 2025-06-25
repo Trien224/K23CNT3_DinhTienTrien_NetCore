@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Lesson10.Models.DttLesson>
+
+@{
+    ViewData["Title"] = "Danh sách bài học";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">@ViewData["Title"]</h2>
+
+    <div class="mb-3">
+        <a asp-action="DttCreate" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Thêm mới
+        </a>
+    </div>
+
+    <table class="table table-bordered table-hover shadow-sm">
+        <thead class="table-dark text-center">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().DttId)</th>
+                <th>@Html.DisplayNameFor(model => model.First().DttName)</th>
+                <th>@Html.DisplayNameFor(model => model.First().DttImage)</th>
+                <th>@Html.DisplayNameFor(model => model.First().DttContent)</th>
+                <th>@Html.DisplayNameFor(model => model.First().DttStatus)</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DttId</td>
+                    <td>@item.DttName</td>
+                    <td>
+                        <img src="@Url.Content("~/" + item.DttImage)" alt="Ảnh bài học" width="100" />
+                    </td>
+                    <td>@item.DttContent</td>
+                    <td>@(item.DttStatus ? "Hiển thị" : "Ẩn")</td>
+                    <td class="text-nowrap">
+                        <a asp-action="DttEdit" asp-route-id="@item.DttId" class="btn btn-sm btn-warning">Sửa</a>
+                        <a asp-action="DttDetails" asp-route-id="@item.DttId" class="btn btn-sm btn-info">Chi tiết</a>
+                        <a asp-action="DttDelete" asp-route-id="@item.DttId" class="btn btn-sm btn-danger">Xoá</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

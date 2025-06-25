@@ -1,0 +1,56 @@
+﻿@model Lesson10.Models.DttLesson
+
+@{
+    ViewData["Title"] = "Delete Lesson";
+}
+
+<h2 class="mb-4 text-danger">Delete Confirmation</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h5 class="card-title text-danger">Are you sure you want to delete this lesson?</h5>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.DttName)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DttName)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.DttImage)
+            </dt>
+            <dd class="col-sm-9">
+                @if (!string.IsNullOrEmpty(Model.DttImage))
+                {
+                    <img src="@Url.Content("~/" + Model.DttImage)" alt="Lesson Image" class="img-thumbnail" width="150" />
+                }
+                else
+                {
+                    <span class="text-muted">No image</span>
+                }
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.DttContent)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DttContent)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.DttStatus)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DttStatus)
+            </dd>
+        </dl>
+
+        <form asp-action="DttDelete" class="mt-4">
+            <input type="hidden" asp-for="DttId" />
+            <button type="submit" class="btn btn-danger">Yes, Delete</button>
+            <a asp-action="DttIndex" class="btn btn-outline-secondary ms-2">Cancel</a>
+        </form>
+    </div>
+</div>

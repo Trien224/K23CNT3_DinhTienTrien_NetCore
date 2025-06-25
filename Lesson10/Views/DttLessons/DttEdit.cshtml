@@ -1,0 +1,60 @@
+﻿@model Lesson10.Models.DttLesson
+
+@{
+    ViewData["Title"] = "Edit Lesson";
+}
+
+<h2 class="mb-4">Edit Lesson</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form asp-action="DttEdit" method="post" enctype="multipart/form-data">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <input type="hidden" asp-for="DttId" />
+
+            <div class="mb-3">
+                <label asp-for="DttName" class="form-label fw-bold"></label>
+                <input asp-for="DttName" class="form-control" />
+                <span asp-validation-for="DttName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="ImageFile" class="form-label fw-bold">Image</label>
+                <input type="file" name="ImageFile" class="form-control" />
+
+                @if (!string.IsNullOrEmpty(Model.DttImage))
+                {
+                    <div class="mt-2">
+                        <label class="form-label">Current Image:</label><br />
+                        <img src="@Url.Content("~/" + Model.DttImage)" alt="Current Image" width="150" class="img-thumbnail" />
+                    </div>
+                }
+            </div>
+
+
+            <div class="mb-3">
+                <label asp-for="DttContent" class="form-label fw-bold"></label>
+                <input asp-for="DttContent" class="form-control" />
+                <span asp-validation-for="DttContent" class="text-danger"></span>
+            </div>
+
+            <div class="form-check">
+                <input asp-for="DttStatus" class="form-check-input" type="checkbox" />
+                <label asp-for="DttStatus" class="form-check-label"></label>
+            </div>
+
+
+            <div class="mt-3">  
+                <button type="submit" class="btn btn-success">Save</button>
+                <a asp-action="DttIndex" class="btn btn-outline-secondary ms-2">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

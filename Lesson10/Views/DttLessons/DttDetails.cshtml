@@ -1,0 +1,55 @@
+﻿@model Lesson10.Models.DttLesson
+
+@{
+    ViewData["Title"] = "Lesson Details";
+}
+
+<h2 class="mb-4">Lesson Details</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 fw-bold">
+                @Html.DisplayNameFor(model => model.DttName)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DttName)
+            </dd>
+
+            <dt class="col-sm-3 fw-bold">
+                @Html.DisplayNameFor(model => model.DttImage)
+            </dt>
+           
+            <dd class="col-sm-9">
+                @if (!string.IsNullOrEmpty(Model.DttImage))
+                {
+                    <img src="@Url.Content("~/" + Model.DttImage)" alt="Lesson Image" class="img-thumbnail" width="200" />
+                }
+                else
+                {
+                    <span class="text-muted">No image</span>
+                }
+            </dd>
+
+
+            <dt class="col-sm-3 fw-bold">
+                @Html.DisplayNameFor(model => model.DttContent)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DttContent)
+            </dd>
+
+            <dt class="col-sm-3 fw-bold">
+                @Html.DisplayNameFor(model => model.DttStatus)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DttStatus)
+            </dd>
+        </dl>
+
+        <div class="mt-4">
+            <a asp-action="DttEdit" asp-route-id="@Model?.DttId" class="btn btn-warning me-2">Edit</a>
+            <a asp-action="DttIndex" class="btn btn-outline-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
