@@ -1,0 +1,259 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\views\\dttemployees\\dttindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:views\\dttemployees\\dttindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\views\\dttemployees\\dttedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:views\\dttemployees\\dttedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\views\\dttemployees\\dttdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:views\\dttemployees\\dttdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\views\\dttemployees\\dttdelete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:views\\dttemployees\\dttdelete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\views\\dttemployees\\dttcreate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:views\\dttemployees\\dttcreate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\dttcontrollers\\dttemployeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:dttcontrollers\\dttemployeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\dttcontrollers\\dtthomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:dttcontrollers\\dtthomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\views\\shared\\_dttlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:views\\shared\\_dttlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\views\\dtthome\\dttindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:views\\dtthome\\dttindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\dinhtientrien_2310900107\\views\\dtthome\\dttabout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B0ABCFE6-3BDD-4FD1-B180-09B0D7E59F46}|DinhTienTrien_2310900107.csproj|solutionrelative:views\\dtthome\\dttabout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 375,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DttEdit.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttEmployees\\DttEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\DttEmployees\\DttEdit.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttEmployees\\DttEdit.cshtml*",
+              "RelativeToolTip": "Views\\DttEmployees\\DttEdit.cshtml*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAUwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T04:24:33.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DttDetails.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttEmployees\\DttDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\DttEmployees\\DttDetails.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttEmployees\\DttDetails.cshtml*",
+              "RelativeToolTip": "Views\\DttEmployees\\DttDetails.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T04:23:46.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DttDelete.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttEmployees\\DttDelete.cshtml",
+              "RelativeDocumentMoniker": "Views\\DttEmployees\\DttDelete.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttEmployees\\DttDelete.cshtml*",
+              "RelativeToolTip": "Views\\DttEmployees\\DttDelete.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T04:23:45.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T04:20:31.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DttHomeController.cs",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\DttControllers\\DttHomeController.cs",
+              "RelativeDocumentMoniker": "DttControllers\\DttHomeController.cs",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\DttControllers\\DttHomeController.cs",
+              "RelativeToolTip": "DttControllers\\DttHomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T04:19:47.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DttAbout.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttHome\\DttAbout.cshtml",
+              "RelativeDocumentMoniker": "Views\\DttHome\\DttAbout.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttHome\\DttAbout.cshtml",
+              "RelativeToolTip": "Views\\DttHome\\DttAbout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T04:17:32.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DttIndex.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttHome\\DttIndex.cshtml",
+              "RelativeDocumentMoniker": "Views\\DttHome\\DttIndex.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttHome\\DttIndex.cshtml",
+              "RelativeToolTip": "Views\\DttHome\\DttIndex.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T04:16:58.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DttCreate.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttEmployees\\DttCreate.cshtml",
+              "RelativeDocumentMoniker": "Views\\DttEmployees\\DttCreate.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttEmployees\\DttCreate.cshtml*",
+              "RelativeToolTip": "Views\\DttEmployees\\DttCreate.cshtml*",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAUwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T04:15:23.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DttIndex.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttEmployees\\DttIndex.cshtml",
+              "RelativeDocumentMoniker": "Views\\DttEmployees\\DttIndex.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\DttEmployees\\DttIndex.cshtml*",
+              "RelativeToolTip": "Views\\DttEmployees\\DttIndex.cshtml*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T04:08:02.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DttEmployeesController.cs",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\DttControllers\\DttEmployeesController.cs",
+              "RelativeDocumentMoniker": "DttControllers\\DttEmployeesController.cs",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\DttControllers\\DttEmployeesController.cs",
+              "RelativeToolTip": "DttControllers\\DttEmployeesController.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAwwIgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T04:07:36.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_DttLayout.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\Shared\\_DttLayout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_DttLayout.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Views\\Shared\\_DttLayout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_DttLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-02T04:06:52.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-02T03:56:32.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\DinhTienTrien_2310900107\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T03:56:10.65Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 516,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

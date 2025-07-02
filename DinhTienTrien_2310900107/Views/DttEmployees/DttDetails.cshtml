@@ -1,0 +1,39 @@
+﻿@model DinhTienTrien_2310900107.Models.DttEmployee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Employee Details</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">DttEmployee Information</h5>
+            <hr />
+
+            <dl class="row">
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DttEmpName)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DttEmpName)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DttEmpLevel)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DttEmpLevel)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DttStartDate)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DttStartDate)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DttEmpStatus)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DttEmpStatus)</dd>
+            </dl>
+
+            <div class="mt-4">
+                <a asp-action="DttEdit" asp-route-id="@Model?.DttEmpId" class="btn btn-warning me-2">
+                    <i class="bi bi-pencil-square"></i> Edit
+                </a>
+                <a asp-action="DttIndex" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

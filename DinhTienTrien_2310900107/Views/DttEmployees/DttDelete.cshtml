@@ -1,0 +1,38 @@
+﻿@model DinhTienTrien_2310900107.Models.DttEmployee
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-danger">Delete Confirmation</h2>
+
+    <div class="card border-danger shadow-sm">
+        <div class="card-body">
+            <h4 class="mb-3">Are you sure you want to delete this employee?</h4>
+            <dl class="row">
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DttEmpName)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DttEmpName)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DttEmpLevel)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DttEmpLevel)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DttStartDate)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DttStartDate)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DttEmpStatus)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DttEmpStatus)</dd>
+            </dl>
+
+            <form asp-action="DttDelete" class="mt-4">
+                <input type="hidden" asp-for="DttEmpId" />
+                <button type="submit" class="btn btn-danger me-2">
+                    <i class="bi bi-trash"></i> Delete
+                </button>
+                <a asp-action="DttIndex" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to List
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
