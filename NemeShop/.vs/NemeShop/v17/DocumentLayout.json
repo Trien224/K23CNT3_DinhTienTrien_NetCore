@@ -63,8 +63,7 @@
               "ViewState": "AgIAAOIAAAAAAAAAAAAAAPEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-08-26T17:45:48.194Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -97,8 +96,7 @@
               "RelativeToolTip": "Views\\Shared\\_Header.cshtml",
               "ViewState": "AgIAAAEAAAAAAAAAAAAowB0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-25T08:14:20.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T08:14:20.499Z"
             },
             {
               "$type": "Document",
@@ -159,8 +157,7 @@
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
               "ViewState": "AgIAABQAAAAAAAAAAAAqwCUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T19:55:42.809Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-26T19:55:42.809Z"
             },
             {
               "$type": "Document",
