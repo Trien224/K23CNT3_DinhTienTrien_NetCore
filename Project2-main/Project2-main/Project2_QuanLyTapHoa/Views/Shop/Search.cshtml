@@ -1,0 +1,28 @@
+﻿@model List<Project2_QuanLyTapHoa.Models.SanPham>
+
+<h3>Kết quả tìm kiếm: "@Request.Query["query"]"</h3>
+
+@if (!Model.Any())
+{
+    <p>Không tìm thấy sản phẩm nào.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var p in Model)
+        {
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img src="~/images/@p.HinhAnh" class="card-img-top" alt="@p.TenSp" />
+                    <div class="card-body text-center">
+                        <h5>@p.TenSp</h5>
+                        <p>@p.DonGia.ToString("N0")đ</p>
+                        <button class="btn btn-sm btn-primary" onclick="addToCart(@p.MaSp, '@p.TenSp', @p.DonGia)">
+                            Thêm giỏ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
