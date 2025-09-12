@@ -1,0 +1,158 @@
+﻿@model Project2_QuanLyTapHoa.Models.HoaDonDto
+
+@{
+    Layout = "_LogLayout";
+    ViewData["Title"] = "Sửa hóa đơn";
+}
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card shadow-lg border-0 rounded-3" style="max-width: 800px; width: 100%;">
+        <div class="card-header bg-warning text-white">
+            <h4 class="mb-0"><i class="bi bi-pencil-square"></i> @ViewData["Title"]</h4>
+        </div>
+        <div class="card-body p-4">
+            <form id="hoaDonForm">
+                <input type="hidden" asp-for="MaHd" id="MaHd" />
+
+                <!-- Khách hàng -->
+                <div class="mb-3">
+                    <label asp-for="MaKh" class="fw-bold"><i class="bi bi-person"></i> Khách hàng</label>
+                    <select asp-for="MaKh" class="form-control" asp-items="@(ViewData["MaKh"] as SelectList)" id="MaKh">
+                        <option value="">-- Chọn khách hàng --</option>
+                    </select>
+                </div>
+
+                <!-- Mã voucher -->
+                <div class="mb-3">
+                    <label asp-for="MaVoucher" class="fw-bold"><i class="bi bi-ticket-perforated"></i> Mã voucher</label>
+                    <select asp-for="MaVoucher" class="form-control" asp-items="@(ViewData["MaVoucher"] as SelectList)" id="MaVoucher">
+                        <option value="">-- Không dùng --</option>
+                    </select>
+                </div>
+
+                <!-- Địa chỉ giao hàng -->
+                <div class="mb-3">
+                    <label asp-for="DiaChiGiaoHang" class="fw-bold"><i class="bi bi-geo-alt"></i> Địa chỉ giao hàng</label>
+                    <input asp-for="DiaChiGiaoHang" class="form-control" id="DiaChiGiaoHang" />
+                </div>
+
+                <!-- SĐT giao hàng -->
+                <div class="mb-3">
+                    <label asp-for="SdtgiaoHang" class="fw-bold"><i class="bi bi-telephone"></i> SĐT giao hàng</label>
+                    <input asp-for="SdtgiaoHang" class="form-control" id="SdtgiaoHang" />
+                </div>
+
+                <!-- Ghi chú -->
+                <div class="mb-3">
+                    <label asp-for="GhiChu" class="fw-bold"><i class="bi bi-pencil"></i> Ghi chú</label>
+                    <input asp-for="GhiChu" class="form-control" id="GhiChu" />
+                </div>
+
+                <!-- Tổng tiền, tiền giảm, thành tiền -->
+                <div class="mb-3 row">
+                    <div class="col">
+                        <label asp-for="TongTien" class="fw-bold"><i class="bi bi-cash-stack"></i> Tổng tiền</label>
+                        <input asp-for="TongTien" class="form-control" id="TongTien" readonly />
+                    </div>
+                    <div class="col">
+                        <label asp-for="TienGiamGia" class="fw-bold"><i class="bi bi-percent"></i> Tiền giảm</label>
+                        <input asp-for="TienGiamGia" class="form-control" id="TienGiamGia" readonly />
+                    </div>
+                    <div class="col">
+                        <label asp-for="ThanhTien" class="fw-bold"><i class="bi bi-currency-exchange"></i> Thành tiền</label>
+                        <input asp-for="ThanhTien" class="form-control" id="ThanhTien" readonly />
+                    </div>
+                </div>
+
+                <!-- Trạng thái -->
+                <div class="mb-3">
+                    <label asp-for="TrangThai" class="fw-bold"><i class="bi bi-hourglass-split"></i> Trạng thái</label>
+                    <select asp-for="TrangThai" class="form-control" id="TrangThai">
+                        <option value="0">Chờ xử lý</option>
+                        <option value="1">Đã thanh toán</option>
+                        <option value="2">Đang giao hàng</option>
+                        <option value="3">Đã nhận được hàng</option>
+                    </select>
+                </div>
+
+                <div class="text-end">
+                    <button type="button" id="btnSave" class="btn btn-primary">
+                        <i class="bi bi-save"></i> Cập nhật
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary ms-2">
+                        <i class="bi bi-arrow-left-circle"></i> Quay lại
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Tính tiền giảm khi chọn voucher
+        $("#MaVoucher").change(function () {
+            var maVoucher = $(this).val();
+            var tongTien = parseFloat($("#TongTien").val()) || 0;
+
+            if (!maVoucher) {
+                $("#TienGiamGia").val(0);
+                $("#ThanhTien").val(tongTien);
+                return;
+            }
+
+            $.getJSON('/HoaDons/TinhVoucher', { maVoucher: maVoucher, tongTien: tongTien }, function (res) {
+                if (res.success) {
+                    $("#TienGiamGia").val(res.tienGiam);
+                    $("#ThanhTien").val(res.thanhTien);
+                } else {
+                    Swal.fire("Lỗi", res.message, "error");
+                    $("#TienGiamGia").val(0);
+                    $("#ThanhTien").val(tongTien);
+                }
+            });
+        });
+
+        // Lưu hóa đơn bằng Ajax với SweetAlert2
+        $("#btnSave").click(function () {
+            var dto = {
+                MaHd: parseInt($("#MaHd").val()),
+                MaKh: parseInt($("#MaKh").val()),
+                MaVoucher: $("#MaVoucher").val() || null,
+                DiaChiGiaoHang: $("#DiaChiGiaoHang").val(),
+                SdtgiaoHang: $("#SdtgiaoHang").val(),
+                GhiChu: $("#GhiChu").val(),
+                TongTien: parseFloat($("#TongTien").val()),
+                TienGiamGia: parseFloat($("#TienGiamGia").val()),
+                ThanhTien: parseFloat($("#ThanhTien").val()),
+                TrangThai: parseInt($("#TrangThai").val())
+            };
+
+            $.ajax({
+                url: '/HoaDons/EditAjax',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(dto),
+                success: function (res) {
+                    if(res.success) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Cập nhật thành công",
+                            text: res.message,
+                            confirmButtonColor: "#3085d6"
+                        }).then(() => {
+                            window.location.href = '/HoaDons/Index';
+                        });
+                    } else {
+                        Swal.fire("Lỗi", res.message, "error");
+                    }
+                },
+                error: function (xhr) {
+                    Swal.fire("Lỗi", "Có lỗi xảy ra khi gửi dữ liệu.", "error");
+                }
+            });
+        });
+    </script>
+}

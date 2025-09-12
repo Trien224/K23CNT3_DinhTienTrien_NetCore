@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "_Layout"; // layout chung cho khách
+    ViewData["Title"] = "Cửa hàng";
+}
+
+<!-- Danh sách sản phẩm -->
+<main class="container my-4">
+    <main class="container my-4">
+        <div id="productList" class="row g-3"></div>
+    </main>
+
+
+</main>
+
+<!-- Giỏ hàng (Offcanvas) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Giỏ hàng</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul id="cartItems" class="list-group mb-3"></ul>
+        <p id="total" class="fw-bold text-end">Tổng: 0đ</p>
+        <button onclick="checkout()" class="btn btn-success w-100">Thanh toán</button>
+    </div>
+</div>
+
+<!-- Modal Đăng nhập khách hàng -->
+<div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="Login" asp-controller="CustomerAccount" method="post">
+                @Html.AntiForgeryToken()
+                <div class="modal-header">
+                    <h5 class="modal-title">Đăng nhập</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" name="email" placeholder="Email" class="form-control mb-2" required />
+                    <input type="password" name="matKhau" placeholder="Mật khẩu" class="form-control mb-2" required />
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Script -->
+<script src="~/js/shop.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>

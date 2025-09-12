@@ -1,0 +1,494 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\adminaccount\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\adminaccount\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\views\\shop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\views\\shop\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\views\\shop\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\views\\shop\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\sanphams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\sanphams\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\sanphams\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\sanphams\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\sanphams\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\sanphams\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\sanphams\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\sanphams\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\magiamgiums\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\magiamgiums\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\quantriviens\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\quantriviens\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\sanphams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\sanphams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\khachhangs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\khachhangs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\khachhangs\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\khachhangs\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\areas\\admin\\views\\hoadons\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\areas\\admin\\views\\hoadons\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\views\\shared\\_loglayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\views\\shared\\_loglayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\views\\shared\\_body.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\views\\shared\\_body.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|c:\\users\\kobay\\downloads\\project2-main\\project2-main\\project2_quanlytaphoa\\views\\shared\\_banner.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDB1075C-623E-474F-BD15-B024641D1AA6}|Project2_QuanLyTapHoa\\Project2_QuanLyTapHoa.csproj|solutionrelative:project2_quanlytaphoa\\views\\shared\\_banner.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T09:27:15.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Create.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Create.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Create.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:37:53.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:32:38.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:06:21.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shop\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Views\\Shop\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shop\\Index.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Views\\Shop\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T07:02:28.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Search.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shop\\Search.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Views\\Shop\\Search.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shop\\Search.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Views\\Shop\\Search.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T07:03:11.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\AdminAccount\\Login.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\AdminAccount\\Login.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\AdminAccount\\Login.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\AdminAccount\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:32:16.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T06:45:04.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\KhachHangs\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:33:56.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\KhachHangs\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:33:57.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\QuanTriViens\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\QuanTriViens\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\QuanTriViens\\Index.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\QuanTriViens\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:37:21.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\MaGiamGiums\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\MaGiamGiums\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\MaGiamGiums\\Index.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\MaGiamGiums\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:37:37.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Edit.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:37:49.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Details.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Details.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Details.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:37:51.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Delete.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:37:52.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:25:28.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\HoaDons\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\HoaDons\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\HoaDons\\Index.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\HoaDons\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T08:22:26.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Index.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Areas\\Admin\\Views\\SanPhams\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T07:17:46.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-12T07:08:33.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Program.cs",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Program.cs",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Program.cs",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T07:07:40.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\appsettings.json",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\appsettings.json",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\appsettings.json",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-12T07:07:34.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ShopController.cs",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Controllers\\ShopController.cs",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Controllers\\ShopController.cs",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Controllers\\ShopController.cs",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Controllers\\ShopController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAgwDcAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T06:53:44.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_LogLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_LogLayout.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Views\\Shared\\_LogLayout.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_LogLayout.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Views\\Shared\\_LogLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T06:45:57.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_Banner.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_Banner.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Views\\Shared\\_Banner.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_Banner.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Views\\Shared\\_Banner.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T06:48:20.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_Body.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_Body.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Views\\Shared\\_Body.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_Body.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Views\\Shared\\_Body.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T06:45:52.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAYwHAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-12T06:44:36.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "_Navbar.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_Navbar.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Views\\Shared\\_Navbar.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_Navbar.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Views\\Shared\\_Navbar.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T06:39:39.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "_Header.cshtml",
+              "DocumentMoniker": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_Header.cshtml",
+              "RelativeDocumentMoniker": "Project2_QuanLyTapHoa\\Views\\Shared\\_Header.cshtml",
+              "ToolTip": "C:\\Users\\kobay\\Downloads\\Project2-main\\Project2-main\\Project2_QuanLyTapHoa\\Views\\Shared\\_Header.cshtml",
+              "RelativeToolTip": "Project2_QuanLyTapHoa\\Views\\Shared\\_Header.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T06:39:26.546Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 516,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

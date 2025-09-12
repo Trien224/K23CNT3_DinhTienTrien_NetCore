@@ -1,0 +1,12 @@
+﻿@model Project2_QuanLyTapHoa.Models.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Oops! Có lỗi xảy ra.</h1>
+<p>Mã yêu cầu: @Model.RequestId</p>
+@if (Model.ShowRequestId)
+{
+    <p>Thông tin này hữu ích cho việc debug.</p>
+}

@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NemeShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Header -->
+    @Html.Partial("_Header")
+
+   
+   
+
+    <!-- Navbar -->
+    @Html.Partial("_Navbar")
+    @Html.Partial("_Body")
+    <!-- Body chính -->
+    <main class="flex-grow-1 container py-4">
+        @RenderBody()
+    </main>
+    @Html.Partial("_Banner")
+    <!-- Footer -->
+    @Html.Partial("_Footer")
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
