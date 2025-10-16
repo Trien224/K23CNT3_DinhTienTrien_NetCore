@@ -1,0 +1,29 @@
+﻿<body>
+    <!-- Header + logo -->
+    
+
+    <!-- Danh sách sản phẩm -->
+    <main class="container my-4">
+        <div id="productList" class="d-flex flex-wrap gap-3"></div>
+    </main>
+
+    <!-- Popup giỏ hàng -->
+    <div id="cart" class="cart-popup">
+        <h2>Giỏ hàng</h2>
+        <ul id="cartItems"></ul>
+        <p id="total">Tổng: 0đ</p>
+        <button onclick="checkout()" class="btn btn-success">Thanh toán</button>
+    </div>
+
+    <!-- Popup login -->
+    <div id="loginPopup" class="login-popup">
+        <form onsubmit="doLogin(event)" class="p-3 bg-white rounded shadow">
+            <h2>Đăng nhập</h2>
+            <input type="text" id="username" placeholder="Tên đăng nhập" class="form-control mb-2" required />
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+
+    <!-- Gắn script -->
+    <script src="~/js/shop.js"></script>
+</body>

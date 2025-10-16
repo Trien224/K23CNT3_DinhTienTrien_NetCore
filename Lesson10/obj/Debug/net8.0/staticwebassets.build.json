@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "92ua4fti9y1kEgPpmLdfzswEftsdXH/+w2zxMkec2b4=",
+  "Hash": "+yPjHnxc6qNAtRbocKU9BYDTdZMek7GCtmoOKfCgtYA=",
   "Source": "Lesson10",
   "BasePath": "_content/Lesson10",
   "Mode": "Default",
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\Lesson10\\wwwroot\\images\\15c00008c6104046af7514260a960d4c~tplv-photomode-image.jpg",
+      "SourceId": "Lesson10",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\Lesson10\\wwwroot\\",
+      "BasePath": "_content/Lesson10",
+      "RelativePath": "images/15c00008c6104046af7514260a960d4c~tplv-photomode-image#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ebbr96ssxm",
+      "Integrity": "9kzoNHYXE66yEZPMo26OA1ahLxgOrj1kdV7+8NlX4HY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\15c00008c6104046af7514260a960d4c~tplv-photomode-image.jpg"
     },
     {
       "Identity": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\Lesson10\\wwwroot\\images\\27e7896143a04cf6b0549f2771f29201~tplv-photomode-image.jpg",
@@ -1632,6 +1653,88 @@
       ]
     },
     {
+      "Route": "images/15c00008c6104046af7514260a960d4c~tplv-photomode-image.ebbr96ssxm.jpg",
+      "AssetFile": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\Lesson10\\wwwroot\\images\\15c00008c6104046af7514260a960d4c~tplv-photomode-image.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "243423"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9kzoNHYXE66yEZPMo26OA1ahLxgOrj1kdV7+8NlX4HY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 25 Jun 2025 03:37:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ebbr96ssxm"
+        },
+        {
+          "Name": "label",
+          "Value": "images/15c00008c6104046af7514260a960d4c~tplv-photomode-image.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9kzoNHYXE66yEZPMo26OA1ahLxgOrj1kdV7+8NlX4HY="
+        }
+      ]
+    },
+    {
+      "Route": "images/15c00008c6104046af7514260a960d4c~tplv-photomode-image.jpg",
+      "AssetFile": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\Lesson10\\wwwroot\\images\\15c00008c6104046af7514260a960d4c~tplv-photomode-image.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "243423"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9kzoNHYXE66yEZPMo26OA1ahLxgOrj1kdV7+8NlX4HY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 25 Jun 2025 03:37:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9kzoNHYXE66yEZPMo26OA1ahLxgOrj1kdV7+8NlX4HY="
+        }
+      ]
+    },
+    {
       "Route": "images/27e7896143a04cf6b0549f2771f29201~tplv-photomode-image.jpg",
       "AssetFile": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\Lesson10\\wwwroot\\images\\27e7896143a04cf6b0549f2771f29201~tplv-photomode-image.jpg",
       "Selectors": [],
@@ -1736,7 +1839,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 03:34:17 GMT"
+          "Value": "Wed, 25 Jun 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1781,7 +1884,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 03:34:17 GMT"
+          "Value": "Wed, 25 Jun 2025 03:36:54 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1982,7 +2085,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 03:25:32 GMT"
+          "Value": "Wed, 25 Jun 2025 03:37:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2019,7 +2122,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 03:25:32 GMT"
+          "Value": "Wed, 25 Jun 2025 03:37:10 GMT"
         },
         {
           "Name": "Cache-Control",

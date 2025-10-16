@@ -21,7 +21,7 @@ namespace Lesson09.Controllers
         // GET: DttCategories
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Categories.ToListAsync());
+            return View(await _context.DttCategories.ToListAsync());
         }
 
         // GET: DttCategories/Details/5
@@ -32,14 +32,14 @@ namespace Lesson09.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Categories
+            var dttCategory = await _context.DttCategories
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
-            if (category == null)
+            if (dttCategory == null)
             {
                 return NotFound();
             }
 
-            return View(category);
+            return View(dttCategory);
         }
 
         // GET: DttCategories/Create
@@ -53,15 +53,15 @@ namespace Lesson09.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CategoryId,CategoryName")] Category category)
+        public async Task<IActionResult> Create([Bind("CategoryId,CategoryName")] DttCategory dttCategory)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(category);
+                _context.Add(dttCategory);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(category);
+            return View(dttCategory);
         }
 
         // GET: DttCategories/Edit/5
@@ -72,12 +72,12 @@ namespace Lesson09.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Categories.FindAsync(id);
-            if (category == null)
+            var dttCategory = await _context.DttCategories.FindAsync(id);
+            if (dttCategory == null)
             {
                 return NotFound();
             }
-            return View(category);
+            return View(dttCategory);
         }
 
         // POST: DttCategories/Edit/5
@@ -85,9 +85,9 @@ namespace Lesson09.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CategoryId,CategoryName")] Category category)
+        public async Task<IActionResult> Edit(int id, [Bind("CategoryId,CategoryName")] DttCategory dttCategory)
         {
-            if (id != category.CategoryId)
+            if (id != dttCategory.CategoryId)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace Lesson09.Controllers
             {
                 try
                 {
-                    _context.Update(category);
+                    _context.Update(dttCategory);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CategoryExists(category.CategoryId))
+                    if (!DttCategoryExists(dttCategory.CategoryId))
                     {
                         return NotFound();
                     }
@@ -112,7 +112,7 @@ namespace Lesson09.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(category);
+            return View(dttCategory);
         }
 
         // GET: DttCategories/Delete/5
@@ -123,14 +123,14 @@ namespace Lesson09.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Categories
+            var dttCategory = await _context.DttCategories
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
-            if (category == null)
+            if (dttCategory == null)
             {
                 return NotFound();
             }
 
-            return View(category);
+            return View(dttCategory);
         }
 
         // POST: DttCategories/Delete/5
@@ -138,19 +138,19 @@ namespace Lesson09.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
-            if (category != null)
+            var dttCategory = await _context.DttCategories.FindAsync(id);
+            if (dttCategory != null)
             {
-                _context.Categories.Remove(category);
+                _context.DttCategories.Remove(dttCategory);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CategoryExists(int id)
+        private bool DttCategoryExists(int id)
         {
-            return _context.Categories.Any(e => e.CategoryId == id);
+            return _context.DttCategories.Any(e => e.CategoryId == id);
         }
     }
 }

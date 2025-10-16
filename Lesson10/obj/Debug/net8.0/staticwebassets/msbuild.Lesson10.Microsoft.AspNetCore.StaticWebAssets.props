@@ -36,6 +36,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\15c00008c6104046af7514260a960d4c~tplv-photomode-image.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Lesson10</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Lesson10</BasePath>
+      <RelativePath>images/15c00008c6104046af7514260a960d4c~tplv-photomode-image.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ebbr96ssxm</Fingerprint>
+      <Integrity>9kzoNHYXE66yEZPMo26OA1ahLxgOrj1kdV7+8NlX4HY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\15c00008c6104046af7514260a960d4c~tplv-photomode-image.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\27e7896143a04cf6b0549f2771f29201~tplv-photomode-image.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Lesson10</SourceId>

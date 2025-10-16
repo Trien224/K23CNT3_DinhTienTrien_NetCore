@@ -1,0 +1,32 @@
+﻿@model Dtt_2310900107_de05.Models.DttTask
+
+@{
+    ViewData["Title"] = "Xác nhận xoá";
+}
+
+<h1 class="text-danger">Xác nhận xoá công việc</h1>
+
+<h3>Bạn có chắc chắn muốn xoá công việc này?</h3>
+
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">Tên công việc</dt>
+    <dd class="col-sm-9">@Model.DttTaskName</dd>
+
+    <dt class="col-sm-3">Cấp độ</dt>
+    <dd class="col-sm-9">@Model.DttTaskLevel</dd>
+
+    <dt class="col-sm-3">Ngày bắt đầu</dt>
+    <dd class="col-sm-9">@Model.DttStartDate?.ToString("dd/MM/yyyy")</dd>
+
+    <dt class="col-sm-3">Trạng thái</dt>
+    <dd class="col-sm-9">
+        @(Model.DttTaskStatus == true ? "Show" : "Hide")
+    </dd>
+</dl>
+
+<form asp-action="DttDelete">
+    <input type="hidden" asp-for="DttTaskId" />
+    <button type="submit" class="btn btn-danger">Xoá</button>
+    <a asp-action="DttIndex" class="btn btn-secondary ms-2">Quay lại danh sách</a>
+</form>

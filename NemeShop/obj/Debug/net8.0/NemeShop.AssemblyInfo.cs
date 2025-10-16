@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NemeShop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+420009e1a5e0de806ffaf946c3803c564fbb9792")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5549930b00260b8a122537c519a9b7875803b58")]
 [assembly: System.Reflection.AssemblyProductAttribute("NemeShop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NemeShop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

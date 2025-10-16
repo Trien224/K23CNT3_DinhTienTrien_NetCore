@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\DttLesson07.props" />
-</Project>

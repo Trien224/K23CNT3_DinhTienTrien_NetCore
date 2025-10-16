@@ -3,44 +3,36 @@
   "WorkspaceRootPath": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\controllers\\checkoutrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:controllers\\checkoutrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\models\\productwishlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:models\\productwishlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\views\\wishlist\\mywishlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:views\\wishlist\\mywishlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\models\\wishlistitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:models\\wishlistitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\extensions\\sanphamextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:extensions\\sanphamextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\models\\quanlytaphoacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:models\\quanlytaphoacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\views\\shared\\_body.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:views\\shared\\_body.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|c:\\k23cnt-netcore\\k23cnt3_dinhtientrien_netcore\\nemeshop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6AB1AC76-7761-482F-BEA7-702D39A8600F}|NemeShop.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,35 +42,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 375,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAOIAAAAAAAAAAAAAAPEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-26T17:45:48.194Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_Navbar.cshtml",
-              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Shared\\_Navbar.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Navbar.cshtml",
-              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Shared\\_Navbar.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Navbar.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-25T08:15:23.307Z",
-              "IsPinned": true
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -89,102 +54,100 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Header.cshtml",
-              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Shared\\_Header.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Header.cshtml",
-              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Shared\\_Header.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Header.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAowB0AAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-25T08:14:20.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "site.js",
-              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
-              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "wwwroot\\js\\site.js",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAgwIkAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-26T20:03:38.944Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T20:00:10.535Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAIAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T19:56:24.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "About.cshtml",
-              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Home\\About.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\About.cshtml",
-              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Home\\About.cshtml",
-              "RelativeToolTip": "Views\\Home\\About.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T19:57:27.55Z"
+              "DocumentIndex": 1,
+              "Title": "ProductWishlistDto.cs",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Models\\ProductWishlistDto.cs",
+              "RelativeDocumentMoniker": "Models\\ProductWishlistDto.cs",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Models\\ProductWishlistDto.cs",
+              "RelativeToolTip": "Models\\ProductWishlistDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T15:29:18.095Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABQAAAAAAAAAAAAqwCUAAAAOAAAAAAAAAA==",
+              "Title": "MyWishlist.cshtml",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Wishlist\\MyWishlist.cshtml",
+              "RelativeDocumentMoniker": "Views\\Wishlist\\MyWishlist.cshtml",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Wishlist\\MyWishlist.cshtml",
+              "RelativeToolTip": "Views\\Wishlist\\MyWishlist.cshtml",
+              "ViewState": "AgIAAF0CAAAAAAAAAAAQwJMCAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T19:55:42.809Z",
+              "WhenOpened": "2025-10-16T15:10:56.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CheckoutRequestDto.cs",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Controllers\\CheckoutRequestDto.cs",
+              "RelativeDocumentMoniker": "Controllers\\CheckoutRequestDto.cs",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Controllers\\CheckoutRequestDto.cs",
+              "RelativeToolTip": "Controllers\\CheckoutRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T07:59:49.807Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Footer.cshtml",
-              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Shared\\_Footer.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Footer.cshtml",
-              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Shared\\_Footer.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Footer.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T19:52:11.021Z"
+              "DocumentIndex": 3,
+              "Title": "WishlistController.cs",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Controllers\\WishlistController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WishlistController.cs",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Controllers\\WishlistController.cs",
+              "RelativeToolTip": "Controllers\\WishlistController.cs",
+              "ViewState": "AgIAAEsBAAAAAAAAAAAQwG8BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T14:57:54.175Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_Body.cshtml",
-              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Shared\\_Body.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Body.cshtml",
-              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Views\\Shared\\_Body.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Body.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T20:14:40.822Z"
+              "DocumentIndex": 4,
+              "Title": "WishlistItemDto.cs",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Models\\WishlistItemDto.cs",
+              "RelativeDocumentMoniker": "Models\\WishlistItemDto.cs",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Models\\WishlistItemDto.cs",
+              "RelativeToolTip": "Models\\WishlistItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T14:58:29.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SanPhamExtensions.cs",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Extensions\\SanPhamExtensions.cs",
+              "RelativeDocumentMoniker": "Extensions\\SanPhamExtensions.cs",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Extensions\\SanPhamExtensions.cs",
+              "RelativeToolTip": "Extensions\\SanPhamExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T08:02:10.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "QuanLyTapHoaContext.cs",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Models\\QuanLyTapHoaContext.cs",
+              "RelativeDocumentMoniker": "Models\\QuanLyTapHoaContext.cs",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\Models\\QuanLyTapHoaContext.cs",
+              "RelativeToolTip": "Models\\QuanLyTapHoaContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAACmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T07:49:17.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\K23CNT-NETCore\\K23CNT3_DinhTienTrien_NetCore\\NemeShop\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-16T07:46:44.256Z"
             }
           ]
         },

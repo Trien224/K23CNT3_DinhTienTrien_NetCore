@@ -1,5 +1,6 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\15c00008c6104046af7514260a960d4c~tplv-photomode-image.jpg
 wwwroot\images\27e7896143a04cf6b0549f2771f29201~tplv-photomode-image.jpg
 wwwroot\images\2c483d533e394efd90182c7ecdb73de0~tplv-photomode-image.jpg
 wwwroot\images\3f12e0b1a72f4511ba530e2d9c401546~tplv-photomode-image.jpg

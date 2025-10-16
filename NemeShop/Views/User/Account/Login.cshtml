@@ -1,0 +1,426 @@
+﻿@{
+    ViewData["Title"] = "Đăng nhập";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+<div class="login-container">
+    <!-- Header -->
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-gradient mb-3">Chào mừng trở lại! 👋</h2>
+        <p class="text-muted">Đăng nhập để tiếp tục hành trình mua sắm</p>
+    </div>
+
+
+    <!-- Divider -->
+    <div class="divider my-4">
+        <span class="divider-text">Đăng nhập với email</span>
+    </div>
+
+    <!-- Login Form -->
+    <form method="post" action="/Account/Login" id="loginForm" class="needs-validation" novalidate>
+        @Html.AntiForgeryToken()
+
+        <!-- Email Input -->
+        <div class="input-group mb-4">
+            <div class="form-floating">
+                <input name="email" type="email" class="form-control input-modern"
+                       placeholder="name@example.com" value="@ViewBag.Email" required>
+                <label class="form-label">
+                    <i class="bi bi-envelope me-2"></i>Email
+                </label>
+            </div>
+            <div class="input-icon">
+                <i class="bi bi-envelope-check"></i>
+            </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="input-group mb-3">
+            <div class="form-floating">
+                <input name="matKhau" type="password" class="form-control input-modern"
+                       placeholder="Mật khẩu" required>
+                <label class="form-label">
+                    <i class="bi bi-lock me-2"></i>Mật khẩu
+                </label>
+            </div>
+            <div class="input-icon">
+                <button type="button" class="btn btn-link password-toggle">
+                    <i class="bi bi-eye"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Remember & Forgot -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberMe">
+                <label class="form-check-label small fw-medium" for="rememberMe">
+                    Ghi nhớ đăng nhập
+                </label>
+            </div>
+            <a href="#" class="small text-primary fw-semibold text-decoration-none hover-lift">
+                Quên mật khẩu?
+            </a>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-lg w-100 py-3 mb-4 btn-glow" id="submitBtn">
+            <span class="btn-content">
+                <i class="bi bi-box-arrow-in-right me-2"></i>Đăng nhập
+            </span>
+            <div class="btn-loader">
+                <div class="spinner"></div>
+            </div>
+        </button>
+
+        <!-- Messages -->
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-modern alert-danger" role="alert">
+                <div class="alert-content">
+                    <i class="bi bi-shield-exclamation alert-icon"></i>
+                    <div>
+                        <h6 class="alert-title">Đăng nhập thất bại</h6>
+                        <p class="alert-message">@ViewBag.Error</p>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
+        @if (ViewBag.SuccessMessage != null)
+        {
+            <div class="alert alert-modern alert-success" role="alert">
+                <div class="alert-content">
+                    <i class="bi bi-check-circle-fill alert-icon"></i>
+                    <div>
+                        <h6 class="alert-title">Thành công!</h6>
+                        <p class="alert-message">@ViewBag.SuccessMessage</p>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+    </form>
+
+    <!-- Register Link -->
+    <div class="text-center mt-4">
+        <p class="text-muted mb-3">Chưa có tài khoản?</p>
+        <a href="/Account/Register" class="btn btn-outline-primary btn-lg w-100 py-3 btn-hover-scale">
+            <i class="bi bi-person-plus me-2"></i>Tạo tài khoản mới
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('loginForm');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Password toggle with animation
+            const passwordToggle = document.querySelector('.password-toggle');
+            if (passwordToggle) {
+                passwordToggle.addEventListener('click', function() {
+                    const input = this.closest('.input-group').querySelector('input');
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+
+                    const icon = this.querySelector('i');
+                    if (type === 'password') {
+                        icon.className = 'bi bi-eye';
+                        gsap.to(this, { rotation: 0, duration: 0.3 });
+                    } else {
+                        icon.className = 'bi bi-eye-slash';
+                        gsap.to(this, { rotation: 180, duration: 0.3 });
+                    }
+                });
+            }
+
+            // Input focus effects
+            const inputs = form.querySelectorAll('.input-modern');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    gsap.to(this, {
+                        y: -2,
+                        scale: 1.02,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                    this.parentElement.classList.add('focused');
+                });
+
+                input.addEventListener('blur', function() {
+                    gsap.to(this, {
+                        y: 0,
+                        scale: 1,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                    if (!this.value) {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+            });
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Shake invalid fields
+                    const invalidFields = form.querySelectorAll('.is-invalid');
+                    invalidFields.forEach(field => {
+                        gsap.to(field, {
+                            x: 10,
+                            duration: 0.1,
+                            repeat: 3,
+                            yoyo: true,
+                            ease: "power1.inOut"
+                        });
+                    });
+                } else {
+                    // Show loading state
+                    submitBtn.classList.add('loading');
+                    setTimeout(() => {
+                        submitBtn.classList.remove('loading');
+                    }, 2000);
+                }
+                form.classList.add('was-validated');
+            });
+
+            // Real-time validation
+            const requiredInputs = form.querySelectorAll('input[required]');
+            requiredInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.checkValidity()) {
+                        this.classList.remove('is-invalid');
+                        this.classList.add('is-valid');
+                    } else {
+                        this.classList.remove('is-valid');
+                        this.classList.add('is-invalid');
+                    }
+                });
+            });
+
+            // Social button hover effects
+            const socialButtons = document.querySelectorAll('.btn-social');
+            socialButtons.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    gsap.to(this, {
+                        y: -3,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                });
+
+                btn.addEventListener('mouseleave', function() {
+                    gsap.to(this, {
+                        y: 0,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Divider */
+        .divider {
+            position: relative;
+            text-align: center;
+        }
+
+            .divider::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: #e2e8f0;
+            }
+
+        .divider-text {
+            background: white;
+            padding: 0 1rem;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Input Groups */
+        .input-group {
+            position: relative;
+        }
+
+        .input-modern {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1rem 1rem 1rem 3rem;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+            .input-modern:focus {
+                border-color: #667eea;
+                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            z-index: 5;
+        }
+
+        .input-group .input-icon:last-child {
+            left: auto;
+            right: 1rem;
+        }
+
+        .password-toggle {
+            color: #94a3b8;
+            border: none;
+            background: transparent;
+            padding: 0.25rem;
+        }
+
+        /* Buttons */
+        .btn-glow {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+            .btn-glow::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+                transition: left 0.5s;
+            }
+
+            .btn-glow:hover::before {
+                left: 100%;
+            }
+
+            .btn-glow:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            }
+
+            .btn-glow.loading .btn-content {
+                opacity: 0;
+            }
+
+            .btn-glow.loading .btn-loader {
+                opacity: 1;
+            }
+
+        .btn-loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @@keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .btn-hover-scale {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+            .btn-hover-scale:hover {
+                transform: translateY(-2px) scale(1.02);
+            }
+
+        /* Alerts */
+        .alert-modern {
+            border: none;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .alert-danger {
+            background: rgba(220, 53, 69, 0.05);
+            border-left: 4px solid #dc3545;
+        }
+
+        .alert-success {
+            background: rgba(25, 135, 84, 0.05);
+            border-left: 4px solid #198754;
+        }
+
+        .alert-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .alert-icon {
+            font-size: 1.25rem;
+            margin-top: 0.125rem;
+        }
+
+        .alert-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .alert-message {
+            margin-bottom: 0;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+            .hover-lift:hover {
+                transform: translateY(-1px);
+            }
+    </style>
+}

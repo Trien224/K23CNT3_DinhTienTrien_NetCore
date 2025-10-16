@@ -1,0 +1,50 @@
+﻿@model Dtt_2310900107_de05.Models.DttTask
+
+@{
+    ViewData["Title"] = "Chỉnh sửa công việc";
+}
+
+<h1>Chỉnh sửa công việc</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="DttEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DttTaskId" />
+
+            <div class="form-group mb-3">
+                <label asp-for="DttTaskName" class="form-label">Tên công việc</label>
+                <input asp-for="DttTaskName" class="form-control" />
+                <span asp-validation-for="DttTaskName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="DttTaskLevel" class="form-label">Cấp độ</label>
+                <input asp-for="DttTaskLevel" class="form-control" />
+                <span asp-validation-for="DttTaskLevel" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="DttStartDate" class="form-label">Ngày bắt đầu</label>
+                <input asp-for="DttStartDate" class="form-control" />
+                <span asp-validation-for="DttStartDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-check mb-3">
+                <input asp-for="DttTaskStatus" class="form-check-input" type="checkbox" />
+                <label asp-for="DttTaskStatus" class="form-check-label">Đang hoạt động</label>
+                <span asp-validation-for="DttTaskStatus" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+            <a asp-action="DttIndex" class="btn btn-secondary ms-2">Quay lại danh sách</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

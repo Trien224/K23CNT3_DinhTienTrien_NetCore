@@ -15,32 +15,30 @@ public partial class DttBookStoreContext : DbContext
     {
     }
 
-    public virtual DbSet<Account> Accounts { get; set; }
+    public virtual DbSet<DttAccount> DttAccounts { get; set; }
 
-    public virtual DbSet<Book> Books { get; set; }
+    public virtual DbSet<DttBook> DttBooks { get; set; }
 
-    public virtual DbSet<Category> Categories { get; set; }
+    public virtual DbSet<DttCategory> DttCategories { get; set; }
 
-    public virtual DbSet<OrderBook> OrderBooks { get; set; }
+    public virtual DbSet<DttOrderBook> DttOrderBooks { get; set; }
 
-    public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+    public virtual DbSet<DttOrderDetail> DttOrderDetails { get; set; }
 
-    public virtual DbSet<Publisher> Publishers { get; set; }
+    public virtual DbSet<DttPublisher> DttPublishers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=MSI\\BAOMATCAO;Initial Catalog=DttBookStore;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=MSI\\BAOMATCAO;Database=DttBookStore;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Account>(entity =>
+        modelBuilder.Entity<DttAccount>(entity =>
         {
-            entity.HasKey(e => e.AccountId).HasName("PK__Account__349DA5A6B119A728");
+            entity.HasKey(e => e.AccountId).HasName("PK__DttAccou__349DA5A68FA46195");
 
-            entity.ToTable("Account");
+            entity.ToTable("DttAccount");
 
-            entity.Property(e => e.AccountId)
-                .HasMaxLength(36)
-                .IsUnicode(false);
+            entity.Property(e => e.AccountId).ValueGeneratedNever();
             entity.Property(e => e.Address).HasMaxLength(512);
             entity.Property(e => e.Email)
                 .HasMaxLength(64)
@@ -60,49 +58,45 @@ public partial class DttBookStoreContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<Book>(entity =>
+        modelBuilder.Entity<DttBook>(entity =>
         {
-            entity.HasKey(e => e.BookId).HasName("PK__Book__3DE0C20768629A15");
+            entity.HasKey(e => e.BookId).HasName("PK__DttBook__3DE0C2070F23D718");
 
-            entity.ToTable("Book");
+            entity.ToTable("DttBook");
 
             entity.Property(e => e.BookId)
                 .HasMaxLength(10)
                 .IsUnicode(false);
             entity.Property(e => e.Author).HasMaxLength(100);
-            entity.Property(e => e.Description).HasColumnType("ntext");
             entity.Property(e => e.Picture).HasMaxLength(100);
             entity.Property(e => e.Title).HasMaxLength(200);
 
-            entity.HasOne(d => d.Category).WithMany(p => p.Books)
+            entity.HasOne(d => d.Category).WithMany(p => p.DttBooks)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Book__CategoryId__3C69FB99");
+                .HasConstraintName("FK__DttBook__Categor__3C69FB99");
 
-            entity.HasOne(d => d.Publisher).WithMany(p => p.Books)
+            entity.HasOne(d => d.Publisher).WithMany(p => p.DttBooks)
                 .HasForeignKey(d => d.PublisherId)
-                .HasConstraintName("FK__Book__PublisherI__3B75D760");
+                .HasConstraintName("FK__DttBook__Publish__3B75D760");
         });
 
-        modelBuilder.Entity<Category>(entity =>
+        modelBuilder.Entity<DttCategory>(entity =>
         {
-            entity.HasKey(e => e.CategoryId).HasName("PK__Category__19093A0BA1CC59DC");
+            entity.HasKey(e => e.CategoryId).HasName("PK__DttCateg__19093A0B1FF8A705");
 
-            entity.ToTable("Category");
+            entity.ToTable("DttCategory");
 
             entity.Property(e => e.CategoryName).HasMaxLength(100);
         });
 
-        modelBuilder.Entity<OrderBook>(entity =>
+        modelBuilder.Entity<DttOrderBook>(entity =>
         {
-            entity.HasKey(e => e.OrderId).HasName("PK__OrderBoo__C3905BCF38EAFE3E");
+            entity.HasKey(e => e.OrderId).HasName("PK__DttOrder__C3905BCF3153E281");
 
-            entity.ToTable("OrderBook");
+            entity.ToTable("DttOrderBook");
 
             entity.Property(e => e.OrderId)
                 .HasMaxLength(16)
-                .IsUnicode(false);
-            entity.Property(e => e.AccountId)
-                .HasMaxLength(36)
                 .IsUnicode(false);
             entity.Property(e => e.Note).HasMaxLength(512);
             entity.Property(e => e.OrderDate).HasColumnType("datetime");
@@ -115,16 +109,16 @@ public partial class DttBookStoreContext : DbContext
                 .HasMaxLength(16)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.Account).WithMany(p => p.OrderBooks)
+            entity.HasOne(d => d.Account).WithMany(p => p.DttOrderBooks)
                 .HasForeignKey(d => d.AccountId)
-                .HasConstraintName("FK__OrderBook__Accou__412EB0B6");
+                .HasConstraintName("FK__DttOrderB__Accou__412EB0B6");
         });
 
-        modelBuilder.Entity<OrderDetail>(entity =>
+        modelBuilder.Entity<DttOrderDetail>(entity =>
         {
-            entity.HasKey(e => e.OrderDetailId).HasName("PK__OrderDet__D3B9D36CD17B4CA0");
+            entity.HasKey(e => e.OrderDetailId).HasName("PK__DttOrder__D3B9D36CD6D67801");
 
-            entity.ToTable("OrderDetail");
+            entity.ToTable("DttOrderDetail");
 
             entity.Property(e => e.BookId)
                 .HasMaxLength(10)
@@ -134,20 +128,20 @@ public partial class DttBookStoreContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.TotalMoney).HasComputedColumnSql("([Quantity]*[Price])", false);
 
-            entity.HasOne(d => d.Book).WithMany(p => p.OrderDetails)
+            entity.HasOne(d => d.Book).WithMany(p => p.DttOrderDetails)
                 .HasForeignKey(d => d.BookId)
-                .HasConstraintName("FK__OrderDeta__BookI__44FF419A");
+                .HasConstraintName("FK_DttOrderDetail_BookId");
 
-            entity.HasOne(d => d.Order).WithMany(p => p.OrderDetails)
+            entity.HasOne(d => d.Order).WithMany(p => p.DttOrderDetails)
                 .HasForeignKey(d => d.OrderId)
-                .HasConstraintName("FK__OrderDeta__Order__440B1D61");
+                .HasConstraintName("FK_DttOrderDetail_OrderId");
         });
 
-        modelBuilder.Entity<Publisher>(entity =>
+        modelBuilder.Entity<DttPublisher>(entity =>
         {
-            entity.HasKey(e => e.PublisherId).HasName("PK__Publishe__4C657FABD935552B");
+            entity.HasKey(e => e.PublisherId).HasName("PK__DttPubli__4C657FABE5367CC6");
 
-            entity.ToTable("Publisher");
+            entity.ToTable("DttPublisher");
 
             entity.Property(e => e.Address).HasMaxLength(200);
             entity.Property(e => e.Phone)
