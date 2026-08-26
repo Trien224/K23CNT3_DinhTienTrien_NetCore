@@ -1,0 +1,54 @@
+﻿@model Lesson10.Models.DttLesson
+
+@{
+    ViewData["Title"] = "Create Lesson";
+}
+
+<h2 class="mb-4">Create New Lesson</h2>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form asp-action="DttCreate" method="post" enctype="multipart/form-data" class="border p-4 rounded shadow-sm bg-light">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="DttName" class="form-label"></label>
+                <input asp-for="DttName" class="form-control" />
+                <span asp-validation-for="DttName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="ImageFile" class="form-label">Image</label>
+                <input type="file" name="ImageFile" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DttContent" class="form-label"></label>
+                <input asp-for="DttContent" class="form-control" />
+                <span asp-validation-for="DttContent" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DttStatus" class="form-label"></label>
+                <select asp-for="DttStatus" class="form-select">
+                    <option value="">-- Select status --</option>
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
+                </select>
+                <span asp-validation-for="DttStatus" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Create</button>
+        </form>
+
+        <div class="mt-3 text-center">
+            <a asp-action="DttIndex" class="btn btn-outline-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

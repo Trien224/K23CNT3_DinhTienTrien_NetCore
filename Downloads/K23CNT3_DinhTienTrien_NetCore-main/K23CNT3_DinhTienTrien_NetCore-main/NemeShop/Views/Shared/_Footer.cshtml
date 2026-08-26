@@ -1,0 +1,274 @@
+﻿﻿<footer class="modern-footer bg-dark text-white mt-auto">
+    <div class="footer-main py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand mb-4">
+                        <h3 class="gradient-text fw-bold">NemeChuaShop</h3>
+                        <p class="text-light mb-3">Chất lượng & Uy tín – Giao hàng nhanh chóng</p>
+                        <div class="social-links d-flex gap-3">
+                            <a href="#" class="social-link">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-title mb-4">Liên kết nhanh</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2">
+                            <a asp-controller="Home" asp-action="Index" class="footer-link">
+                                <i class="bi bi-house me-2"></i>Trang chủ
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a asp-controller="Home" asp-action="About" class="footer-link">
+                                <i class="bi bi-info-circle me-2"></i>Giới thiệu
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a asp-controller="Home" asp-action="Privacy" class="footer-link">
+                                <i class="bi bi-shield-check me-2"></i>Chính sách bảo mật
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/Home/Terms" class="footer-link">
+                                <i class="bi bi-journal-text me-2"></i>Điều khoản
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-title mb-4">Hỗ trợ khách hàng</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2">
+                            <a href="/Help/Shipping" class="footer-link">
+                                <i class="bi bi-truck me-2"></i>Chính sách vận chuyển
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/Help/Returns" class="footer-link">
+                                <i class="bi bi-arrow-left-right me-2"></i>Đổi trả & Hoàn tiền
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/Help/FAQ" class="footer-link">
+                                <i class="bi bi-question-circle me-2"></i>FAQ
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/Contact" class="footer-link">
+                                <i class="bi bi-telephone me-2"></i>Liên hệ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-title mb-4">Thông tin liên hệ</h5>
+                    <div class="contact-info">
+                        <div class="contact-item mb-3">
+                            <i class="bi bi-geo-alt me-3 text-primary"></i>
+                            <span>35 TT1, Văn Phú, Hà Đông, Hà Nội</span>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <i class="bi bi-telephone me-3 text-primary"></i>
+                            <span>+84 123 456 789</span>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <i class="bi bi-envelope me-3 text-primary"></i>
+                            <span>support@nemechuashop.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-clock me-3 text-primary"></i>
+                            <span>8:00 - 22:00 (T2 - CN)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom py-4 border-top border-secondary">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-muted">
+                        &copy; 2025 NemeChuaShop. All Rights Reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="payment-methods">
+                        <span class="text-muted me-3">Chấp nhận thanh toán:</span>
+                        <i class="bi bi-credit-card-2-front me-2"></i>
+                        <i class="bi bi-paypal me-2"></i>
+                        <i class="bi bi-wallet2 me-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .modern-footer {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+        .modern-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.02" points="0,1000 1000,0 1000,1000"/></svg>');
+            pointer-events: none;
+        }
+
+    .footer-main {
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #f8fafc;
+        position: relative;
+        padding-bottom: 0.75rem;
+    }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #6366f1, #f59e0b);
+            border-radius: 2px;
+        }
+
+    .footer-links {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-link {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        padding: 0.25rem 0;
+        font-size: 0.9rem;
+    }
+
+        .footer-link:hover {
+            color: #6366f1;
+            transform: translateX(5px);
+        }
+
+    .social-links {
+        margin-top: 1rem;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+        .social-link:hover {
+            background: #6366f1;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+
+    .contact-info {
+        margin-top: 0.5rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        color: #cbd5e1;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+        .contact-item:hover {
+            color: #6366f1;
+            transform: translateX(3px);
+        }
+
+    .footer-bottom {
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(10px);
+        position: relative;
+        z-index: 1;
+    }
+
+    .payment-methods i {
+        font-size: 1.2rem;
+        color: #94a3b8;
+        transition: color 0.3s ease;
+    }
+
+        .payment-methods i:hover {
+            color: #6366f1;
+        }
+
+    .gradient-text {
+        background: linear-gradient(135deg, #6366f1, #f59e0b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    @@media (max-width: 768px) {
+        .footer-main {
+            padding: 3rem 0;
+        }
+
+        .footer-title {
+            font-size: 1rem;
+        }
+
+        .footer-link {
+            font-size: 0.85rem;
+        }
+
+        .contact-item {
+            font-size: 0.85rem;
+        }
+    }
+</style>

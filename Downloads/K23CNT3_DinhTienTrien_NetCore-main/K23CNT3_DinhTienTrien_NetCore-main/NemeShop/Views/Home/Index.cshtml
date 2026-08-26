@@ -1,0 +1,240 @@
+﻿@model IEnumerable<NemeShop.Models.SanPham>
+@inject NemeShop.Models.QuanLyTapHoaContext db
+@{
+    ViewData["Title"] = ViewBag.CurrentCategory?.TenLoai ?? "Danh mục sản phẩm";
+}
+
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Trang chủ</a></li>
+        <li class="breadcrumb-item active">@ViewBag.CurrentCategory?.TenLoai</li>
+    </ol>
+</nav>
+
+<!-- Bộ lọc danh mục -->
+<div class="categories-section bg-light py-3 mb-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="category-filters">
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-filter @(ViewBag.CategoryId == null ? "active" : "")">Tất cả</a>
+                    @foreach (var category in ViewBag.Categories)
+                    {
+                        <a href="@Url.Action("Category", "Home", new { id = category.MaLoai })"
+                           class="btn btn-filter @(ViewBag.CategoryId == category.MaLoai ? "active" : "")"
+                           data-category-id="@category.MaLoai">
+                            @category.TenLoai
+                        </a>
+                    }
+                </div>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <select class="form-select sort-select" onchange="sortProducts(this.value)">
+                    <option value="newest">Sắp xếp mặc định</option>
+                    <option value="priceAsc">Giá tăng dần</option>
+                    <option value="priceDesc">Giá giảm dần</option>
+                    <option value="name">Theo tên A-Z</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tiêu đề danh mục -->
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="category-title">@ViewBag.CurrentCategory?.TenLoai</h2>
+            @if (!string.IsNullOrEmpty(ViewBag.CurrentCategory?.MoTa))
+            {
+                <p class="text-muted">@ViewBag.CurrentCategory.MoTa</p>
+            }
+            <p class="text-muted product-count">Tìm thấy @Model.Count() sản phẩm</p>
+        </div>
+    </div>
+</div>
+
+<!-- Khu vực hiển thị sản phẩm -->
+<div id="productGridContainer">
+    @await Html.PartialAsync("_ProductGridPartial", Model)
+</div>
+
+<style>
+    .categories-section {
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .category-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .btn-filter {
+        border: 1px solid #e0e0e0;
+        border-radius: 50px;
+        padding: 0.4rem 1.2rem;
+        font-size: 0.9rem;
+        color: #555;
+        transition: all 0.3s;
+        background: white;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .btn-filter:hover, .btn-filter.active {
+            background: #ff6b35;
+            color: white;
+            border-color: #ff6b35;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
+            text-decoration: none;
+        }
+
+        .btn-filter.active {
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-filter.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+    .sort-select {
+        max-width: 200px;
+        display: inline-block;
+        border-radius: 50px;
+        padding: 0.4rem 1.2rem;
+        border: 1px solid #e0e0e0;
+        font-size: 0.9rem;
+    }
+
+        .sort-select:focus {
+            border-color: #ff6b35;
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25);
+        }
+
+    .category-title {
+        color: #333;
+        font-weight: 700;
+        border-left: 4px solid #ff6b35;
+        padding-left: 1rem;
+    }
+
+    .breadcrumb {
+        background: transparent;
+        padding: 0.75rem 0;
+    }
+
+    .breadcrumb-item a {
+        color: #ff6b35;
+        text-decoration: none;
+    }
+
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+
+    @@media (max-width: 767.98px) {
+        .category-filters {
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+            .category-filters::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .category-filters::-webkit-scrollbar-thumb {
+                background: #ddd;
+                border-radius: 4px;
+            }
+    }
+
+    /* Loading styles */
+    .spinner-border {
+        width: 3rem;
+        height: 3rem;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        let currentCategory = @(ViewBag.CategoryId ?? "0");
+        let currentSort = 'newest';
+        let currentPage = 1;
+        let isLoading = false;
+
+        // Hàm sắp xếp
+        function sortProducts(sortValue) {
+            if (isLoading) return;
+
+            currentSort = sortValue;
+            currentPage = 1;
+            loadProducts(currentCategory, currentSort);
+        }
+
+        // Hàm load sản phẩm bằng AJAX
+        function loadProducts(categoryId, sort, page = 1) {
+            if (isLoading) return;
+
+            isLoading = true;
+
+            // Hiển thị loading
+            if (page === 1) {
+                $('#productGridContainer').html('<div class="text-center py-5"><div class="spinner-border text-primary" role="status"></div><p class="mt-2">Đang tải sản phẩm...</p></div>');
+            }
+
+            // Thêm loading state cho nút sort
+            const sortSelect = document.querySelector('.sort-select');
+            if (sortSelect) {
+                sortSelect.disabled = true;
+            }
+
+            $.ajax({
+                url: '@Url.Action("GetProductsByCategory", "Home")',
+                type: 'GET',
+                data: {
+                    categoryId: categoryId,
+                    sort: sort,
+                    page: page,
+                    pageSize: 24
+                },
+                success: function(result) {
+                    $('#productGridContainer').html(result);
+                    // Cập nhật số lượng sản phẩm
+                    updateProductCount();
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error loading products:', error);
+                    $('#productGridContainer').html('<div class="alert alert-danger text-center">Có lỗi xảy ra khi tải sản phẩm</div>');
+                },
+                complete: function() {
+                    isLoading = false;
+                    // Bỏ disabled cho sort select
+                    if (sortSelect) {
+                        sortSelect.disabled = false;
+                    }
+                }
+            });
+        }
+
+        // Hàm cập nhật số lượng sản phẩm
+        function updateProductCount() {
+            const productCount = $('#productGridContainer .product-card-wrapper').length;
+            $('.product-count').text(`Tìm thấy ${productCount} sản phẩm`);
+        }
+
+        // Khởi tạo khi trang load
+        $(document).ready(function() {
+            updateProductCount();
+
+            // Sự kiện cho button filter trên category page - cho phép chuyển trang bình thường
+            // Không cần xử lý AJAX vì mỗi category page có breadcrumb và title riêng
+        });
+    </script>
+}

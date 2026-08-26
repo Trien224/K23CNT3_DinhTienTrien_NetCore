@@ -1,0 +1,523 @@
+﻿@{
+    ViewData["Title"] = "Đăng ký";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+<div class="register-container">
+    <!-- Header -->
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-gradient mb-2">Bắt đầu hành trình! 🚀</h2>
+        <p class="text-muted">Tạo tài khoản và khám phá thế giới mua sắm</p>
+    </div>
+
+    <!-- Progress Steps -->
+    <div class="progress-steps mb-4">
+        <div class="steps">
+            <div class="step active" data-step="1">
+                <div class="step-icon">1</div>
+                <span class="step-label">Thông tin</span>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-icon">2</div>
+                <span class="step-label">Bảo mật</span>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-icon">3</div>
+                <span class="step-label">Hoàn tất</span>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 33%"></div>
+        </div>
+    </div>
+
+    <!-- Registration Form -->
+    <form method="post" action="/Account/Register" id="registerForm" class="needs-validation" novalidate>
+        @Html.AntiForgeryToken()
+
+        <div class="step-content" data-step="1">
+            <div class="row g-3">
+                <div class="col-12">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input name="HoTen" type="text" class="form-control input-modern"
+                                   placeholder="Nguyễn Văn A" required>
+                            <label class="form-label">
+                                <i class="bi bi-person me-2"></i>Họ tên *
+                            </label>
+                        </div>
+                        <div class="input-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input name="Email" type="email" class="form-control input-modern"
+                                   placeholder="name@example.com" required>
+                            <label class="form-label">
+                                <i class="bi bi-envelope me-2"></i>Email *
+                            </label>
+                        </div>
+                        <div class="input-icon">
+                            <i class="bi bi-envelope-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary w-100 py-3 btn-next-step">
+                        Tiếp tục <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-content d-none" data-step="2">
+            <div class="row g-3">
+                <div class="col-12">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input name="MatKhau" type="password" class="form-control input-modern"
+                                   placeholder="Mật khẩu" minlength="6" required>
+                            <label class="form-label">
+                                <i class="bi bi-lock me-2"></i>Mật khẩu *
+                            </label>
+                        </div>
+                        <div class="input-icon">
+                            <button type="button" class="btn btn-link password-toggle">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="password-strength mt-2">
+                        <div class="strength-bar">
+                            <div class="strength-fill" data-strength="0"></div>
+                        </div>
+                        <small class="strength-text">Mật khẩu yếu</small>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input name="ConfirmPassword" type="password" class="form-control input-modern"
+                                   placeholder="Xác nhận mật khẩu" required>
+                            <label class="form-label">
+                                <i class="bi bi-lock-fill me-2"></i>Xác nhận mật khẩu *
+                            </label>
+                        </div>
+                        <div class="input-icon">
+                            <button type="button" class="btn btn-link password-toggle">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-outline-primary w-100 py-3 btn-prev-step">
+                                <i class="bi bi-arrow-left me-2"></i>Quay lại
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-primary w-100 py-3 btn-next-step">
+                                Tiếp tục <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-content d-none" data-step="3">
+            <div class="row g-3">
+                <div class="col-12">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input name="DienThoai" type="tel" class="form-control input-modern"
+                                   placeholder="0123456789">
+                            <label class="form-label">
+                                <i class="bi bi-telephone me-2"></i>Số điện thoại
+                            </label>
+                        </div>
+                        <div class="input-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input name="DiaChi" type="text" class="form-control input-modern"
+                                   placeholder="Địa chỉ">
+                            <label class="form-label">
+                                <i class="bi bi-geo-alt me-2"></i>Địa chỉ
+                            </label>
+                        </div>
+                        <div class="input-icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="terms-card">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">
+                                Tôi đồng ý với <a href="#" class="text-primary fw-semibold">Điều khoản dịch vụ</a>
+                                và <a href="#" class="text-primary fw-semibold">Chính sách bảo mật</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-outline-primary w-100 py-3 btn-prev-step">
+                                <i class="bi bi-arrow-left me-2"></i>Quay lại
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-success w-100 py-3 btn-glow" id="submitBtn">
+                                <span class="btn-content">
+                                    <i class="bi bi-check-lg me-2"></i>Hoàn tất
+                                </span>
+                                <div class="btn-loader">
+                                    <div class="spinner"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-modern alert-danger mt-3" role="alert">
+                <div class="alert-content">
+                    <i class="bi bi-shield-exclamation alert-icon"></i>
+                    <div>
+                        <h6 class="alert-title">Đăng ký thất bại</h6>
+                        <p class="alert-message">@ViewBag.Error</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </form>
+
+    <!-- Login Link -->
+    <div class="text-center mt-4 pt-3 border-top">
+        <p class="text-muted mb-3">Đã có tài khoản?</p>
+        <a href="/Account/Login" class="btn btn-outline-primary w-100 py-3 btn-hover-scale">
+            <i class="bi bi-box-arrow-in-right me-2"></i>Đăng nhập ngay
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentStep = 1;
+            const totalSteps = 3;
+            const form = document.getElementById('registerForm');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Step Navigation
+            document.querySelectorAll('.btn-next-step').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (validateStep(currentStep)) {
+                        navigateToStep(currentStep + 1);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.btn-prev-step').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    navigateToStep(currentStep - 1);
+                });
+            });
+
+            function navigateToStep(step) {
+                // Hide current step
+                document.querySelector(`.step-content[data-step="${currentStep}"]`).classList.add('d-none');
+                document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');
+
+                // Show new step
+                document.querySelector(`.step-content[data-step="${step}"]`).classList.remove('d-none');
+                document.querySelector(`.step[data-step="${step}"]`).classList.add('active');
+
+                // Update progress bar
+                const progress = (step - 1) / (totalSteps - 1) * 100;
+                document.querySelector('.progress-fill').style.width = `${progress}%`;
+
+                currentStep = step;
+
+                // Add animation
+                gsap.from(`.step-content[data-step="${step}"]`, {
+                    duration: 0.5,
+                    x: step > currentStep ? 50 : -50,
+                    opacity: 0,
+                    ease: "power2.out"
+                });
+            }
+
+            function validateStep(step) {
+                let isValid = true;
+                const stepInputs = document.querySelectorAll(`.step-content[data-step="${step}"] input[required]`);
+
+                stepInputs.forEach(input => {
+                    if (!input.checkValidity()) {
+                        isValid = false;
+                        input.classList.add('is-invalid');
+
+                        gsap.to(input, {
+                            x: 10,
+                            duration: 0.1,
+                            repeat: 3,
+                            yoyo: true,
+                            ease: "power1.inOut"
+                        });
+                    } else {
+                        input.classList.remove('is-invalid');
+                        input.classList.add('is-valid');
+                    }
+                });
+
+                return isValid;
+            }
+
+            // Password strength indicator
+            const passwordInput = document.querySelector('input[name="MatKhau"]');
+            const strengthFill = document.querySelector('.strength-fill');
+            const strengthText = document.querySelector('.strength-text');
+
+            passwordInput.addEventListener('input', function() {
+                const strength = calculatePasswordStrength(this.value);
+                updatePasswordStrength(strength);
+            });
+
+            function calculatePasswordStrength(password) {
+                let strength = 0;
+                if (password.length >= 6) strength += 25;
+                if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength += 25;
+                if (password.match(/\d/)) strength += 25;
+                if (password.match(/[^a-zA-Z\d]/)) strength += 25;
+                return Math.min(strength, 100);
+            }
+
+            function updatePasswordStrength(strength) {
+                strengthFill.style.width = `${strength}%`;
+                strengthFill.setAttribute('data-strength', strength);
+
+                if (strength < 25) {
+                    strengthFill.style.background = '#dc3545';
+                    strengthText.textContent = 'Mật khẩu yếu';
+                } else if (strength < 50) {
+                    strengthFill.style.background = '#fd7e14';
+                    strengthText.textContent = 'Mật khẩu trung bình';
+                } else if (strength < 75) {
+                    strengthFill.style.background = '#ffc107';
+                    strengthText.textContent = 'Mật khẩu khá';
+                } else {
+                    strengthFill.style.background = '#198754';
+                    strengthText.textContent = 'Mật khẩu mạnh';
+                }
+            }
+
+            // Password toggle
+            const passwordToggles = document.querySelectorAll('.password-toggle');
+            passwordToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const input = this.closest('.input-group').querySelector('input');
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+
+                    const icon = this.querySelector('i');
+                    if (type === 'password') {
+                        icon.className = 'bi bi-eye';
+                        gsap.to(this, { rotation: 0, duration: 0.3 });
+                    } else {
+                        icon.className = 'bi bi-eye-slash';
+                        gsap.to(this, { rotation: 180, duration: 0.3 });
+                    }
+                });
+            });
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                } else {
+                    submitBtn.classList.add('loading');
+                }
+                form.classList.add('was-validated');
+            });
+
+            // Input animations
+            const inputs = form.querySelectorAll('.input-modern');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    gsap.to(this, {
+                        y: -2,
+                        scale: 1.02,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                });
+
+                input.addEventListener('blur', function() {
+                    gsap.to(this, {
+                        y: 0,
+                        scale: 1,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Progress Steps */
+        .progress-steps {
+            padding: 0 1rem;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .step-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .step.active .step-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .step-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        .step.active .step-label {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: #e2e8f0;
+            border-radius: 2px;
+            position: absolute;
+            top: 20px;
+            left: 20%;
+            right: 20%;
+            z-index: 1;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+
+        /* Password Strength */
+        .password-strength {
+            padding: 0 0.5rem;
+        }
+
+        .strength-bar {
+            height: 4px;
+            background: #e2e8f0;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 0.25rem;
+        }
+
+        .strength-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            width: 0%;
+        }
+
+        .strength-text {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        /* Terms Card */
+        .terms-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+
+            .terms-card .form-check-label {
+                font-size: 0.875rem;
+                line-height: 1.5;
+            }
+
+        /* Step Content Animations */
+        .step-content {
+            transition: all 0.5s ease;
+        }
+
+        /* Buttons */
+        .btn-success {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border: none;
+        }
+
+            .btn-success:hover {
+                background: linear-gradient(135deg, #059669 0%, #047857 100%);
+                transform: translateY(-2px);
+            }
+    </style>
+}

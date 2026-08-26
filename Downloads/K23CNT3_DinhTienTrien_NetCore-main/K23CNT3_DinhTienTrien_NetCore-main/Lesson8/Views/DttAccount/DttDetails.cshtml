@@ -1,0 +1,74 @@
+﻿@model Lesson8.Models.DttAccount
+
+@{
+    ViewData["Title"] = "DttDetails";
+    Layout = "~/Views/Shared/_DttLayout.cshtml";
+}
+
+<h1>DttDetails</h1>
+
+<div>
+    <h4>DttAccount</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DttId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DttId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DttName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DttName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DttBirthDay)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DttBirthDay)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DttEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DttEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DttPhone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DttPhone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DttAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DttAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DttPassword)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DttPassword)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DttStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DttStatus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DttAvatar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DttAvatar)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "DttEdit", new { id = Model.DttId }, new { @class = "btn btn-warning btn-sm" }) |
+    <a asp-action="DttIndex" class="btn btn-secondary">Back to List</a>
+
+</div>

@@ -1,0 +1,227 @@
+﻿@model List<NemeShop.Models.HoaDon>
+@{
+    ViewData["Title"] = "Đơn hàng của tôi";
+}
+
+<div class="container py-4">
+    <!-- Header Section -->
+    <div class="page-header mb-5 text-center">
+        <h1 class="display-5 fw-bold gradient-text mb-3">Đơn hàng của tôi</h1>
+        <p class="text-muted lead">Theo dõi và quản lý đơn hàng của bạn</p>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row g-4">
+            @foreach (var o in Model)
+            {
+                <div class="col-12">
+                    <div class="order-card modern-card border-0" data-id="@o.MaHd">
+                        <div class="card-body p-4">
+                            <!-- Order Header -->
+                            <div class="order-header d-flex justify-content-between align-items-center mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="order-icon bg-primary bg-opacity-10 rounded-3 p-2 me-3">
+                                        <i class="bi bi-receipt text-primary fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-1">Đơn hàng #@o.MaHd</h5>
+                                        <p class="text-muted mb-0">
+                                            <i class="bi bi-calendar me-1"></i>
+                                            @o.NgayLap.ToString("dd/MM/yyyy HH:mm")
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <span class="order-status badge @(o.TrangThai == 1 ? "bg-success" : "bg-warning") fs-6 px-3 py-2">
+                                        @if (o.TrangThai == 1)
+                                        {
+                                            <i class="bi bi-check-circle me-1">Đã xác nhận</i>
+                                            
+                                        }
+                                        else
+                                        {
+                                            <i class="bi bi-clock me-1"> Chờ xác nhận</i>
+                                           
+                                         }
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Order Content -->
+                            <div class="order-content d-flex justify-content-between align-items-center">
+                                <div class="order-price">
+                                    @if (o.TongTien > o.ThanhTien)
+                                    {
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-muted text-decoration-line-through me-3 fs-6">
+                                                @String.Format("{0:N0} ₫", o.TongTien)
+                                            </span>
+                                            <span class="text-primary fw-bold fs-3">
+                                                @String.Format("{0:N0} ₫", o.ThanhTien)
+                                            </span>
+                                            <span class="badge bg-success ms-3">
+                                                <i class="bi bi-arrow-down me-1"></i>Đã giảm giá
+                                            </span>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-primary fw-bold fs-3">
+                                            @String.Format("{0:N0} ₫", o.ThanhTien)
+                                        </span>
+                                    }
+                                </div>
+                                <div class="order-actions">
+                                    <a href="@Url.Action("Details", "HoaDon", new { id = o.MaHd })"
+                                       class="btn btn-primary btn-hover-scale px-4">
+                                        <i class="bi bi-eye me-2"></i>Xem chi tiết
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Progress Bar -->
+                            <div class="order-progress mt-4">
+                                <div class="progress" style="height: 6px;">
+                                    <div class="progress-bar @(o.TrangThai == 1 ? "bg-success" : "bg-warning")"
+                                         style="width: @(o.TrangThai == 1 ? "100%" : "60%")">
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="text-muted">Đặt hàng</small>
+                                    <small class="text-muted">Xác nhận</small>
+                                    <small class="text-muted">@(o.TrangThai == 1 ? "Hoàn thành" : "Đang xử lý")</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Pagination -->
+        <div class="d-flex justify-content-center mt-5">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">
+                            <i class="bi bi-chevron-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    }
+    else
+    {
+        <!-- Empty State -->
+        <div class="empty-state text-center py-5">
+            <div class="empty-icon mb-4">
+                <i class="bi bi-cart-x display-1 text-muted"></i>
+            </div>
+            <h3 class="text-muted mb-3">Chưa có đơn hàng nào</h3>
+            <p class="text-muted mb-4">Hãy bắt đầu mua sắm và đơn hàng của bạn sẽ xuất hiện ở đây</p>
+            <a href="/Home" class="btn btn-primary btn-lg px-5">
+                <i class="bi bi-bag me-2"></i>Mua sắm ngay
+            </a>
+        </div>
+    }
+</div>
+
+@section Styles {
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .order-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.2);
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+            .order-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            }
+
+        .order-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .order-status {
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .btn-hover-scale {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+            .btn-hover-scale:hover {
+                transform: scale(1.05);
+            }
+
+        .empty-state {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .empty-icon {
+            opacity: 0.7;
+        }
+
+        .progress {
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+
+        .progress-bar {
+            border-radius: 10px;
+            transition: width 0.6s ease;
+        }
+
+        .pagination .page-link {
+            border-radius: 10px;
+            margin: 0 4px;
+            border: none;
+            color: #6c757d;
+            font-weight: 600;
+        }
+
+            .pagination .page-link:hover {
+                background: #667eea;
+                color: white;
+            }
+
+        .pagination .page-item.active .page-link {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+        }
+
+        .modern-card {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+}

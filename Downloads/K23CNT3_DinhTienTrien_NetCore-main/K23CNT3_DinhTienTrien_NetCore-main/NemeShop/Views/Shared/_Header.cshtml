@@ -1,0 +1,499 @@
+﻿<header class="modern-header">
+    <nav class="navbar social-navbar">
+        <div class="container-fluid px-4">
+            <!-- Social Icons bên trái -->
+            <div class="d-flex align-items-center">
+                <div class="social-icons d-flex align-items-center">
+                    <a href="https://www.facebook.com/kobachan123" target="_blank" class="social-icon" title="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/" target="_blank" class="social-icon" title="TikTok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="https://youtu.be/Bi1lE3cjQgM?si=v_6wqPL1GNTohI-J" target="_blank" class="social-icon" title="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-icon" title="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand Section ở giữa -->
+            <div class="brand-section">
+                <a class="brand-logo" asp-controller="Home" asp-action="Index" id="adminSecret">
+                    <div class="logo-wrapper">
+                        <div class="logo-icon">
+                            <img src="https://tungkysie05.id.vn/ngotlogo.png" alt="Logo NemeChuaShop" height="60" class="logo-img rounded-3">
+                        </div>
+                        <div class="brand-text">
+                            <h1 class="brand-name gradient-text">NemeChuaShop</h1>
+                            <div class="brand-tagline">Chất lượng & Uy tín</div>
+                        </div>
+                    </div>
+                    <div id="clickProgress" class="click-progress"></div>
+                </a>
+            </div>
+
+            <!-- Auth Section bên phải -->
+            <div class="auth-section ms-auto">
+                @if (!string.IsNullOrEmpty(Context.Session.GetString("MaKh")) || !string.IsNullOrEmpty(Context.Session.GetString("AdminId")))
+                {
+                    <div class="dropdown user-dropdown">
+                        <a href="#" class="user-profile dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                            <div class="user-avatar-sm">
+                                <i class="bi bi-person-circle"></i>
+                            </div>
+                            <span class="user-name">@Context.Session.GetString("HoTen")</span>
+                            <i class="bi bi-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu modern-dropdown-menu dropdown-menu-end">
+                            <li class="dropdown-header">
+                                <div class="user-info-sm">
+                                    <div class="user-avatar">
+                                        <i class="bi bi-person-fill"></i>
+                                    </div>
+                                    <div class="user-details">
+                                        <div class="user-name fw-semibold">@Context.Session.GetString("HoTen")</div>
+                                        <div class="user-email text-muted">@Context.Session.GetString("Email")</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="/KhachHangs/Profile">
+                                    <i class="bi bi-person me-3"></i>
+                                    <span>Tài khoản</span>
+                                </a>
+                            </li>
+                            @if (!string.IsNullOrEmpty(Context.Session.GetString("MaKh")))
+                            {
+                                <li>
+                                    <a class="dropdown-item" href="/HoaDon/MyOrders">
+                                        <i class="bi bi-receipt me-3"></i>
+                                        <span>Đơn hàng của tôi</span>
+                                    </a>
+                                </li>
+                            }
+                            <li>
+                                <a class="dropdown-item" href="/Wishlist/MyWishlist">
+                                    <i class="bi bi-heart me-3"></i>
+                                    <span>Yêu thích</span>
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item text-danger" href="/Account/Logout">
+                                    <i class="bi bi-box-arrow-right me-3"></i>
+                                    <span>Đăng xuất</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div class="auth-links">
+                        <a asp-controller="Account" asp-action="Login" class="auth-link">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>
+                            <span>Đăng nhập</span>
+                        </a>
+                        <a href="/Account/Register" class="auth-link">
+                            <i class="bi bi-person-plus me-2"></i>
+                            <span>Đăng ký</span>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .modern-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+    }
+
+    [data-bs-theme="dark"] .modern-header {
+        background: rgba(15, 23, 42, 0.95);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .social-navbar {
+        padding: 0.75rem 0;
+        min-height: 70px;
+    }
+
+        .social-navbar .container-fluid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+    /* Brand Section - Căn giữa */
+    .brand-section {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Auth Section - Căn phải */
+    .auth-section.ms-auto {
+        margin-left: auto !important;
+    }
+
+    /* Social Icons */
+    .social-icons {
+        gap: 0.75rem;
+    }
+
+    .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        background: var(--surface-color);
+        border: 1px solid var(--gray-200);
+    }
+
+        .social-icon:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .social-icon .bi-facebook:hover {
+            color: #1877f2;
+            border-color: #1877f2;
+        }
+
+        .social-icon .bi-tiktok:hover {
+            color: #000000;
+            border-color: #000000;
+        }
+
+        .social-icon .bi-youtube:hover {
+            color: #ff0000;
+            border-color: #ff0000;
+        }
+
+        .social-icon .bi-github:hover {
+            color: #333333;
+            border-color: #333333;
+        }
+
+    /* Brand Styles */
+    .brand-logo {
+        text-decoration: none;
+        position: relative;
+        display: block;
+    }
+
+    .logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        background: var(--surface-color);
+        border: 1px solid var(--gray-200);
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+    }
+
+    .brand-logo:hover .logo-wrapper {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-color);
+    }
+
+    .logo-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .brand-logo:hover .logo-icon {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .brand-text {
+        text-align: center;
+    }
+
+    .brand-name {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        font-size: 1.5rem;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .brand-tagline {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    /* Auth Styles */
+    .auth-links {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .auth-link {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        background: var(--surface-color);
+        border: 1px solid var(--gray-200);
+    }
+
+        .auth-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+    /* User Dropdown */
+    .user-dropdown {
+        position: relative;
+    }
+
+    .user-profile {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: all 0.3s ease;
+        background: var(--surface-color);
+        border: 1px solid var(--gray-200);
+    }
+
+        .user-profile:hover {
+            background: var(--primary-light);
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+    .user-avatar-sm {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+    }
+
+    .user-name {
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    .dropdown-arrow {
+        font-size: 0.8rem;
+        transition: transform 0.3s ease;
+    }
+
+    .user-dropdown.show .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Click Progress */
+    .click-progress {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        border-radius: 2px;
+        transition: width 0.3s ease;
+        z-index: 1;
+    }
+
+    /* Responsive */
+    @@media (max-width: 991.98px) {
+        .brand-section {
+            position: static;
+            transform: none;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-navbar .container-fluid {
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .social-icons {
+            order: 1;
+        }
+
+        .brand-section {
+            order: 2;
+            flex-basis: 100%;
+            margin: 0.5rem 0;
+        }
+
+        .auth-section {
+            order: 3;
+        }
+
+        .logo-wrapper {
+            padding: 0.5rem 1rem;
+        }
+
+        .brand-name {
+            font-size: 1.25rem;
+        }
+
+        .brand-tagline {
+            font-size: 0.7rem;
+        }
+    }
+
+    @@media (max-width: 576px) {
+        .social-navbar .container-fluid {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .social-icons {
+            gap: 0.5rem;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .auth-links {
+            gap: 0.25rem;
+        }
+
+        .auth-link {
+            padding: 0.4rem 0.75rem;
+            font-size: 0.8rem;
+        }
+
+        .user-profile {
+            padding: 0.4rem 0.75rem;
+        }
+
+        .user-name {
+            display: none;
+        }
+
+        .logo-wrapper {
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 1.25rem;
+        }
+
+        .brand-name {
+            font-size: 1.1rem;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const adminSecret = document.getElementById('adminSecret');
+        const clickProgress = document.getElementById('clickProgress');
+        let clickCount = 0;
+        let clickTimeout;
+
+        adminSecret.addEventListener('click', function(e) {
+            e.preventDefault();
+            clickCount++;
+            clickProgress.style.width = (clickCount * 10) + '%';
+
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+
+            clearTimeout(clickTimeout);
+            clickTimeout = setTimeout(() => {
+                clickCount = 0;
+                clickProgress.style.width = '0%';
+            }, 3000);
+
+            if (clickCount === 10) {
+                const logoIcon = this.querySelector('.logo-icon');
+                logoIcon.style.animation = 'successPulse 0.6s ease-in-out';
+
+                setTimeout(() => {
+                    Swal.fire({
+                        title: '✨ Chúc mừng!',
+                        text: 'Bạn đã mở khóa trang Admin!',
+                        icon: 'success',
+                        confirmButtonText: 'Đến trang Admin',
+                        confirmButtonColor: '#6366f1',
+                        showCancelButton: true,
+                        cancelButtonText: 'Ở lại',
+                        background: 'var(--surface-color)',
+                        color: 'var(--text-color)'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '/Admin/Account/Login';
+                        }
+                    });
+                }, 600);
+
+                clickCount = 0;
+                clickProgress.style.width = '0%';
+            }
+        });
+
+        // Keyframes for success animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @@keyframes successPulse {
+                0% { transform: scale(1); }
+                25% { transform: scale(1.2) rotate(10deg); }
+                50% { transform: scale(1.1) rotate(-5deg); }
+                75% { transform: scale(1.15) rotate(5deg); }
+                100% { transform: scale(1) rotate(0deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    });
+</script>

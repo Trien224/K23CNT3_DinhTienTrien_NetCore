@@ -1,0 +1,43 @@
+﻿@model IEnumerable<NemeChuaShop.Models.QuanTriVien>
+
+@{
+    ViewData["Title"] = "Danh sách quản trị viên";
+}
+
+<h1 class="text-primary">Danh sách Quản Trị Viên</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">+ Thêm mới</a>
+</p>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.TaiKhoan)</th>
+            <th>Mật khẩu</th>
+            <th>@Html.DisplayNameFor(model => model.TrangThai)</th>
+            <th>@Html.DisplayNameFor(model => model.NgayTao)</th>
+            <th>@Html.DisplayNameFor(model => model.NgayCapNhat)</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TaiKhoan)</td>
+                <td>********</td> <!-- Không hiển thị mật khẩu -->
+                <td>@Html.DisplayFor(modelItem => item.TrangThai)</td>
+                <td>
+                    @item.NgayCapNhat?.ToString("dd/MM/yyyy")
+                </td>
+                <td>@item.NgayCapNhat?.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Sửa</a>
+                    <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.Id">Chi tiết</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+@model NemeChuaShop.Models.LoaiSanPham
+
+@{
+    ViewData["Title"] = "Xóa Loại Sản Phẩm";
+}
+
+<div class="container my-4" style="max-width: 600px;">
+    <div class="card shadow-sm border-danger rounded-3">
+        <div class="card-header bg-danger text-white py-3">
+            <h4 class="mb-0 fw-bold"><i class="bi bi-exclamation-triangle-fill me-2"></i>Xác nhận Xóa Loại Sản Phẩm</h4>
+        </div>
+        <div class="card-body p-4">
+            <p class="text-danger fw-semibold">Bạn có chắc chắn muốn xóa loại sản phẩm này không?</p>
+
+            <dl class="row mb-4">
+                <dt class="col-sm-4 text-muted">Mã Loại:</dt>
+                <dd class="col-sm-8 fw-bold">@Model.MaLoai</dd>
+
+                <dt class="col-sm-4 text-muted">Tên Loại:</dt>
+                <dd class="col-sm-8 fw-semibold">@Model.TenLoai</dd>
+
+                <dt class="col-sm-4 text-muted">Số Sản Phẩm:</dt>
+                <dd class="col-sm-8"><span class="badge bg-info text-dark">@(Model.SanPhams?.Count ?? 0) sản phẩm</span></dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Hủy bỏ
+                    </a>
+                    <button type="submit" class="btn btn-danger px-4">
+                        <i class="bi bi-trash-fill"></i> Xác nhận Xóa
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

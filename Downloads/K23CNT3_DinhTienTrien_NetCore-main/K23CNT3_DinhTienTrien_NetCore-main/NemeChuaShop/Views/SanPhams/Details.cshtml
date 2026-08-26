@@ -1,0 +1,72 @@
+@model NemeChuaShop.Models.SanPham
+
+@{
+    ViewData["Title"] = "Chi tiết Sản Phẩm";
+}
+
+<div class="container my-4" style="max-width: 800px;">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-info text-white py-3">
+            <h4 class="mb-0 fw-bold"><i class="bi bi-info-circle me-2"></i>Chi tiết Sản Phẩm</h4>
+        </div>
+        <div class="card-body p-4">
+            <div class="row align-items-center">
+                <div class="col-md-5 text-center mb-4 mb-md-0">
+                    <img src="~/@(string.IsNullOrEmpty(Model.HinhAnh) ? "images/ban3.png" : Model.HinhAnh)" alt="@Model.TenSanPham" class="img-fluid rounded shadow-sm border" style="max-height: 250px; object-fit: cover;" onerror="this.src='/images/ban3.png';" />
+                </div>
+                <div class="col-md-7">
+                    <h3 class="fw-bold text-dark mb-2">@Model.TenSanPham</h3>
+                    <p class="text-danger fs-4 fw-bold mb-3">@Model.DonGia.ToString("#,##0") đ</p>
+
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4 text-muted">Mã Sản Phẩm:</dt>
+                        <dd class="col-sm-8 fw-semibold">@Model.MaSanPham</dd>
+
+                        <dt class="col-sm-4 text-muted">Loại Sản Phẩm:</dt>
+                        <dd class="col-sm-8"><span class="badge bg-secondary">@(Model.MaLoaiNavigation?.TenLoai ?? Model.MaLoai)</span></dd>
+
+                        <dt class="col-sm-4 text-muted">Số Lượng Tồn:</dt>
+                        <dd class="col-sm-8 fw-bold">@Model.SoLuong cái</dd>
+
+                        <dt class="col-sm-4 text-muted">Trạng Thái:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.TrangThai)
+                            {
+                                <span class="badge bg-success">Đang bán</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Tạm ẩn</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">Người Bán:</dt>
+                        <dd class="col-sm-8">@(Model.MaNguoiBanNavigation?.MaNguoiBan ?? Model.MaNguoiBan ?? "Chưa phân loại")</dd>
+
+                        <dt class="col-sm-4 text-muted">Ngày Tạo:</dt>
+                        <dd class="col-sm-8">@(Model.NgayTao?.ToString("dd/MM/yyyy HH:mm") ?? "-")</dd>
+
+                        <dt class="col-sm-4 text-muted">Ngày Cập Nhật:</dt>
+                        <dd class="col-sm-8">@(Model.NgayCapNhat?.ToString("dd/MM/yyyy HH:mm") ?? "-")</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Quay lại
+                </a>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning px-4 fw-semibold me-2">
+                        <i class="bi bi-pencil-square"></i> Chỉnh sửa
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger px-4">
+                        <i class="bi bi-trash"></i> Xóa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

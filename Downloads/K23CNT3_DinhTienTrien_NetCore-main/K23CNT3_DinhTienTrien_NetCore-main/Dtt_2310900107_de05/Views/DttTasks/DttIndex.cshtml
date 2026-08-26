@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Dtt_2310900107_de05.Models.DttTask>
+
+@{
+    ViewData["Title"] = "Danh sách công việc";
+}
+
+<h1>Danh sách công việc</h1>
+
+<p>
+    <a asp-action="DttCreate" class="btn btn-primary">Tạo công việc mới</a>
+</p>
+
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>
+                Tên công việc
+            </th>
+            <th>
+                Cấp độ
+            </th>
+            <th>
+                Ngày bắt đầu
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DttTaskName</td>
+                <td>@item.DttTaskLevel</td>
+                <td>@item.DttStartDate?.ToString("dd/MM/yyyy")</td>
+                <td>
+                    @(item.DttTaskStatus == true ? "Show" : "Hide")
+                </td>
+                <td>
+                    <a asp-action="DttEdit" asp-route-id="@item.DttTaskId" class="btn btn-sm btn-warning">Sửa</a>
+                    <a asp-action="DttDetails" asp-route-id="@item.DttTaskId" class="btn btn-sm btn-info">Chi tiết</a>
+                    <a asp-action="DttDelete" asp-route-id="@item.DttTaskId" class="btn btn-sm btn-danger">Xoá</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

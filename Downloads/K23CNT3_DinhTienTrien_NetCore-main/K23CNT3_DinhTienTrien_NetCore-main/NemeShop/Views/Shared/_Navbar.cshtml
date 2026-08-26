@@ -1,0 +1,678 @@
+﻿<nav class="navbar navbar-expand-lg modern-navbar sticky-top">
+    <div class="container-fluid px-4">
+        <!-- Logo -->
+        <a class="navbar-brand d-none d-lg-flex align-items-center me-5" asp-controller="Home" asp-action="Index">
+            <div class="logo-container position-relative">
+                <img src="https://tungkysie05.id.vn/ngotlogo.png" alt="Logo NemeChuaShop" height="60" class="logo-img rounded-3">
+                <div class="logo-glow"></div>
+            </div>
+            <div class="brand-text ms-3">
+                <div class="brand-name gradient-text fw-bold fs-4">NemeChuaShop</div>
+                <div class="brand-tagline text-muted small">Chất lượng & Uy tín</div>
+            </div>
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler modern-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+        </button>
+
+        <!-- Search + Nav items -->
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <!-- Search Bar -->
+            <div class="search-container flex-grow-1 mx-lg-4 position-relative">
+                <div class="search-wrapper">
+                    <div class="input-group search-group">
+                        <span class="input-group-text search-icon">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input id="searchInput" class="form-control search-input" type="search"
+                               placeholder="Tìm sản phẩm, thương hiệu..." autocomplete="off">
+                        <button class="btn btn-primary search-btn" type="button" onclick="performSearch()">
+                            <span class="search-text">Tìm kiếm</span>
+                            <i class="bi bi-arrow-right-short"></i>
+                        </button>
+                    </div>
+
+                    <!-- Search Suggestions -->
+                    <div id="searchSuggestions" class="search-suggestions modern-dropdown">
+                        <div class="suggestion-header">
+                            <span class="fw-semibold">Gợi ý tìm kiếm</span>
+                            <button class="btn-close-suggestions" onclick="hideSuggestions()">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        </div>
+                        <div class="suggestion-list" id="suggestionList">
+                            <!-- Suggestions will be populated here -->
+                        </div>
+                        <div class="suggestion-footer">
+                            <small class="text-muted">Nhấn Enter để tìm kiếm</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="navbar-actions d-flex align-items-center ms-lg-4">
+              
+                <!-- Wishlist -->
+                <div class="nav-action-item">
+                    <a href="/Wishlist/MyWishlist" class="nav-action-link position-relative">
+                        <div class="action-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <span class="action-text d-none d-lg-block">Yêu thích</span>
+                        <span class="nav-badge pulse" id="wishlistCount">0</span>
+                    </a>
+                </div>
+
+                <!-- Orders -->
+                <div class="nav-action-item">
+                    <a href="/HoaDon/MyOrders" class="nav-action-link position-relative">
+                        <div class="action-icon">
+                            <i class="bi bi-bag"></i>
+                        </div>
+                        <span class="action-text d-none d-lg-block">Đơn hàng</span>
+                        <span class="nav-badge" id="orderCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Modern Navbar Styles */
+    .modern-navbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 70px; /* Height of header */
+        z-index: 1020;
+    }
+
+    [data-bs-theme="dark"] .modern-navbar {
+        background: rgba(15, 23, 42, 0.95);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Sticky behavior */
+    .modern-navbar.sticky-top {
+        position: sticky;
+        top: 70px;
+        z-index: 1020;
+    }
+
+    /* Rest of the existing navbar styles remain the same */
+    .logo-container {
+        position: relative;
+    }
+
+    .logo-img {
+        transition: transform 0.3s ease;
+        border: 2px solid transparent;
+        background: linear-gradient(45deg, #6366f1, #f59e0b) border-box;
+    }
+
+    .logo-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #6366f1, #f59e0b);
+        border-radius: 12px;
+        filter: blur(12px);
+        opacity: 0.3;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-brand:hover .logo-img {
+        transform: scale(1.05);
+    }
+
+    .navbar-brand:hover .logo-glow {
+        opacity: 0.5;
+        filter: blur(15px);
+    }
+
+    .brand-name {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+    }
+
+    .brand-tagline {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Mobile Toggler */
+    .modern-toggler {
+        border: none;
+        background: transparent;
+        padding: 0.5rem;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .toggler-icon {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--text-color);
+        margin: 3px 0;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+
+    .modern-toggler[aria-expanded="true"] .toggler-icon:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .modern-toggler[aria-expanded="true"] .toggler-icon:nth-child(2) {
+        opacity: 0;
+    }
+
+    .modern-toggler[aria-expanded="true"] .toggler-icon:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Search Styles */
+    .search-container {
+        max-width: 600px;
+    }
+
+    .search-wrapper {
+        position: relative;
+    }
+
+    .search-group {
+        background: var(--surface-color);
+        border-radius: 50px;
+        border: 2px solid var(--gray-200);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+        .search-group:focus-within {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+            transform: translateY(-1px);
+        }
+
+    .search-icon {
+        background: transparent;
+        border: none;
+        color: var(--gray-500);
+        padding-left: 1.5rem;
+    }
+
+    .search-input {
+        border: none;
+        background: transparent;
+        padding: 0.875rem 0;
+        font-size: 0.95rem;
+    }
+
+        .search-input:focus {
+            box-shadow: none;
+            background: transparent;
+        }
+
+    .search-btn {
+        border-radius: 0 50px 50px 0;
+        padding: 0.875rem 1.5rem;
+        font-weight: 600;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .search-text {
+        display: inline;
+    }
+
+    .search-btn:hover {
+        transform: translateX(2px);
+    }
+
+    /* Search Suggestions */
+    .search-suggestions {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--surface-color);
+        border: 1px solid var(--gray-200);
+        border-radius: 20px;
+        box-shadow: var(--shadow-xl);
+        margin-top: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+        .search-suggestions.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+    .suggestion-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--gray-200);
+        background: var(--gray-100);
+    }
+
+    .btn-close-suggestions {
+        background: none;
+        border: none;
+        color: var(--gray-500);
+        padding: 0.25rem;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+
+        .btn-close-suggestions:hover {
+            background: var(--gray-200);
+            color: var(--gray-700);
+        }
+
+    .suggestion-list {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .suggestion-footer {
+        padding: 0.75rem 1.5rem;
+        border-top: 1px solid var(--gray-200);
+        background: var(--gray-100);
+    }
+
+    .suggestion-item {
+        display: flex;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--gray-100);
+        transition: all 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+        .suggestion-item:hover {
+            background: var(--primary-light);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+
+        .suggestion-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+    .suggestion-info {
+        flex: 1;
+    }
+
+    .suggestion-name {
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+        color: var(--text-color);
+    }
+
+    .suggestion-price {
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .no-suggestions {
+        padding: 2rem 1.5rem;
+        text-align: center;
+        color: var(--text-muted);
+        font-style: italic;
+    }
+
+    .search-highlight {
+        background-color: rgba(99, 102, 241, 0.1);
+        padding: 0.1rem 0.2rem;
+        border-radius: 4px;
+        font-weight: 600;
+    }
+
+    /* Navbar Actions */
+    .navbar-actions {
+        gap: 0.5rem;
+    }
+
+    .nav-action-item {
+        position: relative;
+    }
+
+    .nav-action-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+        .nav-action-link:hover {
+            background: var(--primary-light);
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+    .action-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: var(--gray-100);
+        transition: all 0.3s ease;
+    }
+
+    .nav-action-link:hover .action-icon {
+        background: var(--primary-color);
+        color: white;
+        transform: scale(1.1);
+    }
+
+    .action-text {
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    /* Badges */
+    .nav-badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: var(--danger-color);
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        border: 2px solid var(--surface-color);
+    }
+
+    /* Responsive */
+    @@media (max-width: 991.98px) {
+        .search-container {
+            margin: 1rem 0;
+            max-width: none;
+        }
+
+        .navbar-actions {
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .nav-action-link {
+            flex-direction: column;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .action-text {
+            font-size: 0.8rem;
+        }
+
+        .search-text {
+            display: none;
+        }
+
+        .search-btn {
+            padding: 0.875rem;
+        }
+    }
+
+    @@media (max-width: 576px) {
+        .container-fluid {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .navbar-brand {
+            margin-right: 0;
+        }
+
+        .brand-text {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    // Enhanced Search Functionality
+    let searchTimeout;
+    let currentSuggestions = [];
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const suggestionsContainer = document.getElementById('searchSuggestions');
+
+        // Load initial counts
+        loadNavbarCounts();
+
+        // Enhanced input handling with debounce
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            const searchTerm = this.value.trim();
+
+            if (searchTerm.length < 2) {
+                hideSuggestions();
+                return;
+            }
+
+            searchTimeout = setTimeout(() => {
+                fetchSearchSuggestions(searchTerm);
+            }, 250);
+        });
+
+        // Focus handling
+        searchInput.addEventListener('focus', function() {
+            const searchTerm = this.value.trim();
+            if (searchTerm.length >= 2 && currentSuggestions.length > 0) {
+                showSuggestions();
+            }
+        });
+
+        // Keyboard navigation
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+                hideSuggestions();
+            } else if (e.key === 'Escape') {
+                hideSuggestions();
+                this.blur();
+            }
+        });
+
+        // Click outside to hide suggestions
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+                hideSuggestions();
+            }
+        });
+    });
+
+    // Enhanced navbar counts loading
+    async function loadNavbarCounts() {
+        try {
+            // Load cart count
+            const cartResponse = await fetch('/Cart/GetCartCount');
+            if (cartResponse.ok) {
+                const cartCount = await cartResponse.json();
+                document.getElementById('cartCount').textContent = cartCount;
+            }
+
+            // Load wishlist count
+            const wishlistResponse = await fetch('/Wishlist/GetWishlistCount');
+            if (wishlistResponse.ok) {
+                const wishlistCount = await wishlistResponse.json();
+                document.getElementById('wishlistCount').textContent = wishlistCount;
+            }
+
+            // Load order count
+            const orderResponse = await fetch('/HoaDon/GetPendingOrderCount');
+            if (orderResponse.ok) {
+                const orderCount = await orderResponse.json();
+                document.getElementById('orderCount').textContent = orderCount;
+            }
+
+        } catch (error) {
+            console.error('Error loading navbar counts:', error);
+        }
+    }
+
+    // Enhanced search suggestions
+    async function fetchSearchSuggestions(term) {
+        try {
+            const response = await fetch(`/Home/SearchSuggestions?term=${encodeURIComponent(term)}`);
+            if (!response.ok) throw new Error('Network response was not ok');
+
+            const data = await response.json();
+
+            if (data.success && data.suggestions.length > 0) {
+                currentSuggestions = data.suggestions;
+                displaySuggestions(data.suggestions, term);
+            } else {
+                currentSuggestions = [];
+                displayNoSuggestions();
+            }
+        } catch (error) {
+            console.error('Error fetching search suggestions:', error);
+            displayNoSuggestions();
+        }
+    }
+
+    // Display suggestions with enhanced UI
+    function displaySuggestions(suggestions, searchTerm) {
+        const suggestionList = document.getElementById('suggestionList');
+
+        if (!suggestions || suggestions.length === 0) {
+            displayNoSuggestions();
+            return;
+        }
+
+        let html = '';
+        const limitedSuggestions = suggestions.slice(0, 8);
+
+        limitedSuggestions.forEach((suggestion, index) => {
+            const highlightedName = highlightText(suggestion.tenSp, searchTerm);
+            const price = formatPrice(suggestion.donGia);
+
+            html += `
+                <a href="/Home/Details/${suggestion.maSp}" class="suggestion-item">
+                    <img src="${suggestion.anhDaiDien || '/images/placeholder.jpg'}"
+                         alt="${suggestion.tenSp}"
+                         onerror="this.src='/images/placeholder.jpg'">
+                    <div class="suggestion-info">
+                        <div class="suggestion-name">${highlightedName}</div>
+                        <div class="suggestion-price">${price}</div>
+                    </div>
+                    <i class="bi bi-arrow-right-short text-muted"></i>
+                </a>
+            `;
+        });
+
+        suggestionList.innerHTML = html;
+        showSuggestions();
+    }
+
+    function displayNoSuggestions() {
+        const suggestionList = document.getElementById('suggestionList');
+        suggestionList.innerHTML = `
+            <div class="no-suggestions">
+                <i class="bi bi-search display-4 text-muted mb-3"></i>
+                <div>Không tìm thấy sản phẩm phù hợp</div>
+                <small class="text-muted">Thử với từ khóa khác</small>
+            </div>
+        `;
+        showSuggestions();
+    }
+
+    function highlightText(text, searchTerm) {
+        if (!searchTerm) return text;
+
+        const regex = new RegExp(`(${searchTerm})`, 'gi');
+        return text.replace(regex, '<span class="search-highlight">$1</span>');
+    }
+
+    function formatPrice(price) {
+        return new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+        }).format(price);
+    }
+
+    function showSuggestions() {
+        const suggestionsContainer = document.getElementById('searchSuggestions');
+        suggestionsContainer.classList.add('show');
+    }
+
+    function hideSuggestions() {
+        const suggestionsContainer = document.getElementById('searchSuggestions');
+        suggestionsContainer.classList.remove('show');
+    }
+
+    function performSearch() {
+        const searchTerm = document.getElementById('searchInput').value.trim();
+
+        if (searchTerm) {
+            window.location.href = `/Home/Search?q=${encodeURIComponent(searchTerm)}`;
+        } else {
+            window.location.href = '/Home/Index';
+        }
+
+        hideSuggestions();
+    }
+
+    // Add Enter key support
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+</script>

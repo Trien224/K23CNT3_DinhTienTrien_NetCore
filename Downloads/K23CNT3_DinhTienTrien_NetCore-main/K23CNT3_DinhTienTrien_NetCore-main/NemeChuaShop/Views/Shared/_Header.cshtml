@@ -1,0 +1,66 @@
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var session = HttpContextAccessor.HttpContext?.Session;
+    var userName = session?.GetString("UserName");
+    var displayName = session?.GetString("DisplayName") ?? userName;
+    var userRole = session?.GetString("UserRole");
+    bool isLoggedIn = !string.IsNullOrEmpty(userName);
+}
+
+<!-- Thanh MXH + Đăng nhập -->
+<nav class="navbar social-navbar">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Social links bên trái -->
+        <div class="d-flex align-items-center">
+            <a href="https://facebook.com" target="_blank" class="nav-link me-2 text-primary" title="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="nav-link me-2 text-dark" title="TikTok"><i class="bi bi-tiktok fs-5"></i></a>
+            <a href="https://youtube.com" target="_blank" class="nav-link me-2 text-danger" title="YouTube"><i class="bi bi-youtube fs-5"></i></a>
+            <a href="https://github.com" target="_blank" class="nav-link text-dark" title="GitHub"><i class="bi bi-github fs-5"></i></a>
+        </div>
+
+        <!-- Logo + tên shop căn giữa -->
+        <a class="navbar-brand fw-bold mx-auto text-center" asp-controller="Home" asp-action="Index">
+            <h1 class="mb-0 text-danger" style="font-family: 'Pacifico', cursive;">NemeChuaShop</h1>
+        </a>
+
+        <!-- Đăng nhập / User info bên phải -->
+        <div class="d-flex align-items-center">
+            @if (isLoggedIn)
+            {
+                <div class="dropdown">
+                    <button class="btn btn-outline-success dropdown-toggle btn-sm d-flex align-items-center gap-2" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-check-fill text-success fs-6"></i>
+                        <span class="fw-semibold">@displayName</span>
+                        @if (userRole == "Admin")
+                        {
+                            <span class="badge bg-danger">Admin</span>
+                        }
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="userMenuButton">
+                        @if (userRole == "Admin")
+                        {
+                            <li><a class="dropdown-menu-item dropdown-item" asp-controller="SanPhams" asp-action="Index"><i class="bi bi-speedometer2 me-2"></i>Quản lý Sản phẩm</a></li>
+                            <li><a class="dropdown-menu-item dropdown-item" asp-controller="LoaiSanPhams" asp-action="Index"><i class="bi bi-tags me-2"></i>Quản lý Loại SP</a></li>
+                            <li><a class="dropdown-menu-item dropdown-item" asp-controller="QuanTriViens" asp-action="Index"><i class="bi bi-people me-2"></i>Quản lý Quản trị viên</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                        }
+                        <li><a class="dropdown-item text-danger" asp-controller="Account" asp-action="Logout"><i class="bi bi-box-arrow-right me-2"></i>Đăng xuất</a></li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <div class="d-flex gap-2">
+                    <a class="btn btn-sm btn-outline-success" href="javascript:void(0)" onclick="toggleLogin()">
+                        <i class="bi bi-box-arrow-in-right me-1"></i> Đăng nhập
+                    </a>
+                    <a class="btn btn-sm btn-success" asp-controller="Account" asp-action="Register">
+                        <i class="bi bi-person-plus me-1"></i> Đăng ký
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</nav>

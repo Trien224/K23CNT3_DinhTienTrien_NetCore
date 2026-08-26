@@ -1,0 +1,161 @@
+﻿@model NemeShop.Models.KhachHang
+
+@{
+    ViewData["Title"] = "Chỉnh sửa thông tin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="/KhachHangs/Profile" class="text-decoration-none">Hồ sơ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Chỉnh sửa thông tin</li>
+                </ol>
+            </nav>
+
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header bg-gradient-primary text-white py-4">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                            <div class="bg-white bg-opacity-20 rounded-3 p-3">
+                                <i class="bi bi-pencil-square fs-2"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-4">
+                            <h3 class="card-title mb-1 fw-bold">Chỉnh sửa thông tin</h3>
+                            <p class="mb-0 opacity-75">Cập nhật thông tin cá nhân của bạn</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body p-4 p-md-5">
+                    <form asp-action="EditProfile" id="editProfileForm" class="needs-validation" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                        <input type="hidden" asp-for="MaKh" />
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="HoTen" class="form-control rounded-3" placeholder="Họ tên" required />
+                                    <label asp-for="HoTen" class="form-label">Họ tên *</label>
+                                    <span asp-validation-for="HoTen" class="text-danger small mt-1"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Email" class="form-control rounded-3" placeholder="Email" required />
+                                    <label asp-for="Email" class="form-label">Email *</label>
+                                    <span asp-validation-for="Email" class="text-danger small mt-1"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="DienThoai" class="form-control rounded-3" placeholder="Số điện thoại" />
+                                    <label asp-for="DienThoai" class="form-label">Số điện thoại</label>
+                                    <span asp-validation-for="DienThoai" class="text-danger small mt-1"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea asp-for="DiaChi" class="form-control rounded-3" placeholder="Địa chỉ" style="height: 100px"></textarea>
+                                    <label asp-for="DiaChi" class="form-label">Địa chỉ</label>
+                                    <span asp-validation-for="DiaChi" class="text-danger small mt-1"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mt-5 pt-4 border-top">
+                            <a href="/KhachHangs/Profile" class="btn btn-outline-secondary btn-lg px-4 rounded-3 hover-lift">
+                                <i class="bi bi-arrow-left me-2"></i> Quay lại
+                            </a>
+                            <button type="submit" class="btn btn-primary btn-lg px-4 rounded-3 hover-lift" id="submitBtn">
+                                <i class="bi bi-check-circle me-2"></i> Cập nhật thông tin
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .form-floating > .form-control {
+            height: calc(3.5rem + 2px);
+            line-height: 1.25;
+            padding: 1rem 0.75rem;
+        }
+
+        .form-floating > label {
+            padding: 1rem 0.75rem;
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+            .hover-lift:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            }
+
+        .card {
+            border: none;
+            transition: transform 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+    </style>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('editProfileForm');
+            const submitBtn = document.getElementById('submitBtn');
+
+            form.addEventListener('submit', function(e) {
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                } else {
+                    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Đang cập nhật...';
+                    submitBtn.disabled = true;
+                }
+                form.classList.add('was-validated');
+            });
+
+            // Real-time validation
+            const inputs = form.querySelectorAll('input[required], textarea[required]');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.checkValidity()) {
+                        this.classList.remove('is-invalid');
+                        this.classList.add('is-valid');
+                    } else {
+                        this.classList.remove('is-valid');
+                        this.classList.add('is-invalid');
+                    }
+                });
+            });
+        });
+    </script>
+}

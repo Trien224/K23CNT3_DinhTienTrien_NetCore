@@ -1,0 +1,13 @@
+﻿<!-- Danh mục -->
+<div class="categories text-center my-3">
+    <button onclick="filterCategory('all')" class="btn btn-outline-primary">Tất cả</button>
+    <button onclick="filterCategory('Hải Sản')" class="btn btn-outline-primary">Hải Sản</button>
+    <button onclick="filterCategory('Gia Vị')" class="btn btn-outline-primary">Gia Vị</button>
+    <button onclick="filterCategory('Mỹ Phẩm')" class="btn btn-outline-primary">Mỹ Phẩm</button>
+    <button onclick="filterCategory('Quần Áo')" class="btn btn-outline-primary">Quần Áo</button>
+    <select class="form-select d-inline-block w-auto ms-2" onchange="sortProducts(this.value)">
+        <option value="">Sắp xếp</option>
+        <option value="asc">Giá tăng dần</option>
+        <option value="desc">Giá giảm dần</option>
+    </select>
+</div>

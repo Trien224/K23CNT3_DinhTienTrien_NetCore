@@ -1,0 +1,54 @@
+@model NemeChuaShop.Models.LoaiSanPham
+
+@{
+    ViewData["Title"] = "Chi tiết Loại Sản Phẩm";
+}
+
+<div class="container my-4" style="max-width: 700px;">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-info text-white py-3">
+            <h4 class="mb-0 fw-bold"><i class="bi bi-info-circle me-2"></i>Chi tiết Loại Sản Phẩm</h4>
+        </div>
+        <div class="card-body p-4">
+            <dl class="row mb-0">
+                <dt class="col-sm-4 text-muted">Mã Loại:</dt>
+                <dd class="col-sm-8 fw-bold text-dark">@Model.MaLoai</dd>
+
+                <dt class="col-sm-4 text-muted">Tên Loại:</dt>
+                <dd class="col-sm-8 fw-semibold">@Model.TenLoai</dd>
+
+                <dt class="col-sm-4 text-muted">Trạng Thái:</dt>
+                <dd class="col-sm-8">
+                    @if (Model.TrangThai)
+                    {
+                        <span class="badge bg-success">Đang hoạt động</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Tạm ngừng</span>
+                    }
+                </dd>
+
+                <dt class="col-sm-4 text-muted">Số Lượng Sản Phẩm:</dt>
+                <dd class="col-sm-8"><span class="badge bg-primary">@(Model.SanPhams?.Count ?? 0) sản phẩm</span></dd>
+
+                <dt class="col-sm-4 text-muted">Ngày Tạo:</dt>
+                <dd class="col-sm-8">@(Model.NgayTao?.ToString("dd/MM/yyyy HH:mm:ss") ?? "-")</dd>
+
+                <dt class="col-sm-4 text-muted">Ngày Cập Nhật:</dt>
+                <dd class="col-sm-8">@(Model.NgayCapNhat?.ToString("dd/MM/yyyy HH:mm:ss") ?? "-")</dd>
+            </dl>
+
+            <hr class="my-4" />
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Quay lại
+                </a>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning px-4 fw-semibold">
+                    <i class="bi bi-pencil-square"></i> Chỉnh sửa
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

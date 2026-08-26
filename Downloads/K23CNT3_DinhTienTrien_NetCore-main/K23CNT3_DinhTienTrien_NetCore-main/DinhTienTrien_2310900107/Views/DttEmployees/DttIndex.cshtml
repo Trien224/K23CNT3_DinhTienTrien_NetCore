@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DinhTienTrien_2310900107.Models.DttEmployee>
+
+@{
+    ViewData["Title"] = "Employee List";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Employee List</h2>
+
+    <div class="mb-3">
+        <a asp-action="DttCreate" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Create New
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover shadow-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.First().DttEmpName)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().DttEmpLevel)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().DttStartDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().DttEmpStatus)</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.DttEmpName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DttEmpLevel)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DttStartDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DttEmpStatus)</td>
+                        <td class="text-center">
+                            <a asp-action="DttEdit" asp-route-id="@item.DttEmpId" class="btn btn-sm btn-warning me-1">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <a asp-action="DttDetails" asp-route-id="@item.DttEmpId" class="btn btn-sm btn-info me-1 text-white">
+                                <i class="bi bi-eye"></i> Details
+                            </a>
+                            <a asp-action="DttDelete" asp-route-id="@item.DttEmpId" class="btn btn-sm btn-danger">
+                                <i class="bi bi-trash"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model DinhTienTrien_2310900107.Models.DttEmployee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Create New Employee</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="DttCreate">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="DttEmpName" class="form-label"></label>
+                    <input asp-for="DttEmpName" class="form-control" />
+                    <span asp-validation-for="DttEmpName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DttEmpLevel" class="form-label"></label>
+                    <input asp-for="DttEmpLevel" class="form-control" />
+                    <span asp-validation-for="DttEmpLevel" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DttStartDate" class="form-label"></label>
+                    <input asp-for="DttStartDate" type="date" class="form-control" />
+                    <span asp-validation-for="DttStartDate" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DttEmpStatus" class="form-label"></label>
+                    <select asp-for="DttEmpStatus" class="form-select">
+                        <option value="">-- Select Status --</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                    <span asp-validation-for="DttEmpStatus" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-action="DttIndex" class="btn btn-secondary ms-2">Back to List</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

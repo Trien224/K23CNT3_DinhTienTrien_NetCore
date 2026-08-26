@@ -1,0 +1,703 @@
+﻿﻿@using System.Text.Json
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var showWelcome = HttpContextAccessor.HttpContext?.Session?.GetString("ShowWelcome") == "true";
+    var hoTen = HttpContextAccessor.HttpContext?.Session?.GetString("HoTen") ?? "Khách hàng";
+    var maKh = HttpContextAccessor.HttpContext?.Session?.GetInt32("MaKh");
+    var adminId = HttpContextAccessor.HttpContext?.Session?.GetString("AdminId");
+    var isLoggedIn = maKh.HasValue || !string.IsNullOrEmpty(adminId);
+}
+<!DOCTYPE html>
+<html lang="vi" data-bs-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="NemeChuaShop - cửa hàng trực tuyến uy tín, chất lượng" />
+    <title>@ViewData["Title"] - NemeChuaShop</title>
+
+    <!-- Favicon -->
+    <link href="https://tungkysie05.id.vn/ngotlogo.png" rel="icon" type="image/x-icon" />
+
+    <!-- Modern CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/app.extra.css" asp-append-version="true" />
+
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary-color: #f59e0b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-bs-theme="dark"] {
+            --bg-color: #0f172a;
+            --surface-color: #1e293b;
+            --text-color: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        [data-bs-theme="light"] {
+            --bg-color: #ffffff;
+            --surface-color: #f8fafc;
+            --text-color: #1f2937;
+            --text-muted: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-slow);
+        }
+
+        main {
+            flex: 1;
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--surface-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: var(--primary-dark);
+            }
+
+        /* Loading Animation */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--gray-200);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @@keyframes spin {
+            0%
+
+        {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+            .back-to-top.show {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .back-to-top:hover {
+                background: var(--primary-dark);
+                transform: translateY(-5px);
+            }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--surface-color);
+            border: 2px solid var(--gray-200);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+            .theme-toggle:hover {
+                transform: scale(1.1);
+                border-color: var(--primary-color);
+            }
+
+        /* Modern Card Styles */
+        .modern-card {
+            background: var(--surface-color);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+            .modern-card:hover {
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-4px);
+            }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Pulse Animation */
+        @@keyframes pulse {
+            0%, 100%
+
+        {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+        }
+
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+
+    @RenderSection("Head", required: false)
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <partial name="_Header" />
+
+    <!-- Navbar -->
+    <partial name="_Navbar" />
+
+    <!-- Banner -->
+    <partial name="_Banner" />
+
+    <!-- Main Content -->
+    <main class="container-fluid px-4 px-lg-5">
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <partial name="_Footer" />
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="bi bi-moon-stars" id="themeIcon"></i>
+    </button>
+
+    <!-- Anti-forgery token for Ajax -->
+    <form id="antiForgeryForm" style="display:none;">
+        @Html.AntiForgeryToken()
+    </form>
+
+    <!-- Modern JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/4.4.0/chart.min.js"></script>
+
+    <!-- jQuery (keep for existing functionality) -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <!-- Global Configuration -->
+    @if (showWelcome)
+    {
+        <script>
+            window.showWelcomeMessage = true;
+            window.userHoTen = @Html.Raw(JsonSerializer.Serialize(hoTen));
+        </script>
+    }
+
+    <script>
+        // Global configuration
+        const CONFIG = {
+            primaryColor: '#6366f1',
+            apiTimeout: 30000,
+            isDarkMode: localStorage.getItem('theme') === 'dark'
+        };
+
+        // Initialize theme
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+
+        // Update theme icon
+        function updateThemeIcon(theme) {
+            const themeIcon = document.getElementById('themeIcon');
+            if (theme === 'dark') {
+                themeIcon.className = 'bi bi-sun';
+            } else {
+                themeIcon.className = 'bi bi-moon-stars';
+            }
+        }
+
+        // Toggle theme
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+
+            // Add transition class for smooth theme change
+            document.body.classList.add('theme-transition');
+            setTimeout(() => {
+                document.body.classList.remove('theme-transition');
+            }, 300);
+        }
+
+        // Page loader
+        function hidePageLoader() {
+            const loader = document.getElementById('pageLoader');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }
+        }
+
+        // Back to top functionality
+        function initBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Initialize GSAP animations
+        function initAnimations() {
+            // Register ScrollTrigger
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animate on scroll
+            gsap.utils.toArray('.animate-on-scroll').forEach(element => {
+                gsap.from(element, {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    ease: 'power3.out'
+                });
+            });
+        }
+
+        // Safe JSON serialization
+        function safeJsonStringify(obj) {
+            try {
+                return JSON.stringify(obj);
+            } catch (e) {
+                console.error('JSON stringify error:', e);
+                return '""';
+            }
+        }
+
+        // Setup global Ajax configuration
+        (function () {
+            'use strict';
+
+            try {
+                const token = document.querySelector('#antiForgeryForm input[name="__RequestVerificationToken"]')?.value;
+                if (token) {
+                    $.ajaxSetup({
+                        headers: {
+                            'RequestVerificationToken': token
+                        },
+                        timeout: CONFIG.apiTimeout,
+                        xhrFields: {
+                            withCredentials: true
+                        }
+                    });
+                }
+            } catch (error) {
+                console.warn('Ajax setup token error:', error);
+            }
+
+            // Global error handler for Ajax
+            $(document).ajaxError(function (event, jqXHR, ajaxSettings, thrownError) {
+                console.error('Ajax request failed:', {
+                    url: ajaxSettings.url,
+                    status: jqXHR.status,
+                    error: thrownError
+                });
+            });
+        })();
+
+        // Show logout success message
+        (function () {
+            'use strict';
+
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('logout') === 'success') {
+                Swal.fire({
+                    title: 'Đăng xuất thành công!',
+                    text: 'Bạn đã đăng xuất khỏi hệ thống',
+                    icon: 'success',
+                    confirmButtonColor: CONFIG.primaryColor,
+                    timer: 1600,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
+
+                // Remove query parameter without page reload
+                const url = new URL(window.location);
+                url.searchParams.delete('logout');
+                window.history.replaceState({}, document.title, url);
+            }
+        })();
+
+        // Show welcome message after login
+        (function () {
+            'use strict';
+
+            if (window.showWelcomeMessage && window.userHoTen) {
+                try {
+                    Swal.fire({
+                        title: 'Đăng nhập thành công!',
+                        html: 'Chào mừng <b>' + window.userHoTen + '</b> đến với<br/>NemeChuaShop',
+                        icon: 'success',
+                        confirmButtonColor: CONFIG.primaryColor,
+                        timer: 1800,
+                        showConfirmButton: false,
+                        allowOutsideClick: false
+                    });
+
+                    // Clear welcome message flag
+                    const token = document.querySelector('#antiForgeryForm input[name="__RequestVerificationToken"]')?.value;
+                    if (token) {
+                        fetch('/Account/HideWelcomeMessage', {
+                            method: 'POST',
+                            headers: {
+                                'RequestVerificationToken': token,
+                                'Content-Type': 'application/json'
+                            },
+                            credentials: 'same-origin'
+                        }).catch(error => {
+                            console.error('Failed to hide welcome message:', error);
+                        });
+                    }
+                } catch (error) {
+                    console.error('Welcome message error:', error);
+                }
+            }
+        })();
+
+        // Utility functions
+        function showLoading() {
+            document.body.classList.add('loading');
+        }
+
+        function hideLoading() {
+            document.body.classList.remove('loading');
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize theme
+            initTheme();
+
+            // Hide page loader
+            setTimeout(hidePageLoader, 1000);
+
+            // Initialize back to top
+            initBackToTop();
+
+            // Initialize animations
+            initAnimations();
+
+            // Theme toggle event
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+            console.log('🚀 NemeChuaShop Modern Edition loaded successfully');
+        });
+
+        // Global error handler
+        window.addEventListener('error', function (e) {
+            console.error('Global error:', e.error);
+        });
+
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            // Log performance metrics
+            if ('performance' in window) {
+                const perfData = performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`📊 Page loaded in ${loadTime}ms`);
+            }
+        });
+    </script>
+
+    <!-- WISHLIST SCRIPT (Giữ nguyên từ trước) -->
+    <script>
+        // Wishlist System - Simple and Effective
+        console.log('🔄 Loading wishlist system...');
+
+        $(document).ready(function() {
+            console.log('🚀 Initializing wishlist system...');
+            initializeWishlist();
+        });
+
+        function initializeWishlist() {
+            // Event delegation for all wishlist buttons
+            $(document).on('click', '.wishlist-btn', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                console.log('❤️ Wishlist button clicked');
+
+                const $btn = $(this);
+                const productId = $btn.data('product-id');
+
+                if (!productId) {
+                    console.error('❌ No product ID found');
+                    return;
+                }
+
+                // Show loading
+                const originalHtml = $btn.html();
+                $btn.html('<i class="bi bi-arrow-repeat spinner-border spinner-border-sm"></i>').prop('disabled', true);
+
+                // Get CSRF token
+                const token = $('input[name="__RequestVerificationToken"]').val();
+
+                if (!token) {
+                    console.error('❌ CSRF token not found');
+                    $btn.html(originalHtml).prop('disabled', false);
+                    showWishlistToast('error', 'Lỗi bảo mật');
+                    return;
+                }
+
+                // Call API
+                $.ajax({
+                    url: '/Wishlist/ToggleWishlist',
+                    type: 'POST',
+                    data: { productId: productId },
+                    headers: {
+                        'RequestVerificationToken': token
+                    },
+                    success: function(response) {
+                        console.log('✅ Wishlist response:', response);
+
+                        if (response.success) {
+                            // Update all buttons for this product
+                            updateWishlistButtons(productId, response.isWishlist);
+                            showWishlistToast('success', response.message);
+                        } else {
+                            showWishlistToast('error', response.message);
+                            if (response.message.includes('đăng nhập')) {
+                                setTimeout(() => {
+                                    window.location.href = '/Account/Login';
+                                }, 1500);
+                            }
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('❌ Wishlist AJAX error:', error);
+                        showWishlistToast('error', 'Lỗi kết nối server');
+                    },
+                    complete: function() {
+                        $btn.html(originalHtml).prop('disabled', false);
+                    }
+                });
+            });
+
+            console.log('✅ Wishlist system initialized');
+        }
+
+        function updateWishlistButtons(productId, isWishlist) {
+            const $allButtons = $(`.wishlist-btn[data-product-id="${productId}"]`);
+
+            $allButtons.each(function() {
+                const $btn = $(this);
+                const $icon = $btn.find('i');
+
+                if (isWishlist) {
+                    // Add to wishlist
+                    $btn.addClass('wishlist-active')
+                        .attr('title', 'Xóa khỏi yêu thích');
+                    $icon.removeClass('bi-heart')
+                         .addClass('bi-heart-fill')
+                         .css('color', '#dc3545');
+                } else {
+                    // Remove from wishlist
+                    $btn.removeClass('wishlist-active')
+                        .attr('title', 'Thêm vào yêu thích');
+                    $icon.removeClass('bi-heart-fill')
+                         .addClass('bi-heart')
+                         .css('color', '');
+                }
+            });
+        }
+
+        function showWishlistToast(icon, message) {
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: icon,
+                title: message,
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true
+            });
+        }
+
+        // Debug function
+        function debugWishlist() {
+            console.log('=== 🐞 WISHLIST DEBUG ===');
+            const buttons = $('.wishlist-btn');
+            console.log(`Total buttons: ${buttons.length}`);
+
+            buttons.each(function(index) {
+                const $btn = $(this);
+                console.log(`Button ${index}:`, {
+                    productId: $btn.data('product-id'),
+                    active: $btn.hasClass('wishlist-active'),
+                    title: $btn.attr('title')
+                });
+            });
+
+            const token = $('input[name="__RequestVerificationToken"]');
+            console.log('CSRF Token:', token.length ? '✅ Found' : '❌ Not found');
+        }
+
+        // Auto debug after 2 seconds
+        setTimeout(() => {
+            console.log('🔍 Running wishlist debug...');
+            debugWishlist();
+        }, 2000);
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

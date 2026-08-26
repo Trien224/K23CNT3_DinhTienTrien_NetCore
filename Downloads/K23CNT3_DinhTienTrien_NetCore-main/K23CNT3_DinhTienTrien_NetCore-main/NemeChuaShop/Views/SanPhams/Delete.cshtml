@@ -1,0 +1,37 @@
+@model NemeChuaShop.Models.SanPham
+
+@{
+    ViewData["Title"] = "Xóa Sản Phẩm";
+}
+
+<div class="container my-4" style="max-width: 650px;">
+    <div class="card shadow-sm border-danger rounded-3">
+        <div class="card-header bg-danger text-white py-3">
+            <h4 class="mb-0 fw-bold"><i class="bi bi-exclamation-triangle-fill me-2"></i>Xác nhận Xóa Sản Phẩm</h4>
+        </div>
+        <div class="card-body p-4">
+            <p class="text-danger fw-semibold">Bạn có chắc chắn muốn xóa sản phẩm này khỏi hệ thống không?</p>
+
+            <div class="d-flex align-items-center gap-3 mb-4 p-3 bg-light rounded">
+                <img src="~/@(string.IsNullOrEmpty(Model.HinhAnh) ? "images/ban3.png" : Model.HinhAnh)" alt="@Model.TenSanPham" class="img-thumbnail rounded" style="width: 80px; height: 80px; object-fit: cover;" onerror="this.src='/images/ban3.png';" />
+                <div>
+                    <h5 class="fw-bold mb-1">@Model.TenSanPham</h5>
+                    <p class="text-muted mb-0 small">Mã SP: <span class="fw-semibold">@Model.MaSanPham</span></p>
+                    <p class="text-danger fw-bold mb-0">@Model.DonGia.ToString("#,##0") đ</p>
+                </div>
+            </div>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Hủy bỏ
+                    </a>
+                    <button type="submit" class="btn btn-danger px-4">
+                        <i class="bi bi-trash-fill"></i> Xác nhận Xóa
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

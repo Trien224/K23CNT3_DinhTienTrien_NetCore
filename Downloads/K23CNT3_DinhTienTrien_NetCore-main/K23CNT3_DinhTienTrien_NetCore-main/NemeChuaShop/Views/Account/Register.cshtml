@@ -1,0 +1,72 @@
+@model NemeChuaShop.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Đăng ký tài khoản";
+}
+
+<div class="container my-5" style="max-width: 550px;">
+    <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+        <div class="card-header bg-primary text-white text-center py-4">
+            <h3 class="fw-bold mb-1"><i class="bi bi-person-plus-fill me-2"></i>Đăng Ký Tài Khoản</h3>
+            <p class="mb-0 small text-white-50">Tạo tài khoản để mua sắm nem chua nhanh chóng</p>
+        </div>
+        <div class="card-body p-4 p-md-5">
+            <form asp-action="Register" method="post">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2 small" role="alert"></div>
+
+                <div class="mb-3">
+                    <label asp-for="HoTen" class="form-label fw-semibold"></label>
+                    <input asp-for="HoTen" class="form-control" placeholder="Nguyễn Văn A" />
+                    <span asp-validation-for="HoTen" class="text-danger small"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Email" class="form-label fw-semibold"></label>
+                        <input asp-for="Email" class="form-control" placeholder="example@email.com" />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="DienThoai" class="form-label fw-semibold"></label>
+                        <input asp-for="DienThoai" class="form-control" placeholder="0901234567" />
+                        <span asp-validation-for="DienThoai" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DiaChi" class="form-label fw-semibold"></label>
+                    <input asp-for="DiaChi" class="form-control" placeholder="Số nhà, đường, quận/huyện, tỉnh/thành..." />
+                    <span asp-validation-for="DiaChi" class="text-danger small"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="MatKhau" class="form-label fw-semibold"></label>
+                        <input asp-for="MatKhau" class="form-control" placeholder="Tối thiểu 6 ký tự" />
+                        <span asp-validation-for="MatKhau" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="XacNhanMatKhau" class="form-label fw-semibold"></label>
+                        <input asp-for="XacNhanMatKhau" class="form-control" placeholder="Nhập lại mật khẩu" />
+                        <span asp-validation-for="XacNhanMatKhau" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg fw-semibold shadow-sm">
+                        <i class="bi bi-check-circle me-1"></i> Hoàn Tất Đăng Ký
+                    </button>
+                </div>
+            </form>
+
+            <div class="text-center mt-4 pt-3 border-top">
+                <span class="text-muted small">Đã có tài khoản? </span>
+                <a asp-action="Login" class="text-primary fw-bold text-decoration-none small">Đăng nhập ngay</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

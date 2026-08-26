@@ -1,0 +1,693 @@
+﻿@model IEnumerable<NemeShop.Models.SanPham>
+
+<!-- Modern Filter & Sort Section -->
+<div class="filter-section modern-filter-section">
+    <div class="container-fluid px-4">
+        <div class="filter-container">
+            <!-- Category Filters -->
+            <div class="filter-group">
+                <div class="filter-header">
+                    <i class="bi bi-filter-circle me-2"></i>
+                    <span class="filter-title">Danh mục</span>
+                </div>
+                <div class="filter-content">
+                    <div class="category-filters">
+                        <button type="button" class="filter-btn active" data-category-id="0">
+                            <span class="filter-icon">
+                                <i class="bi bi-grid-3x3-gap"></i>
+                            </span>
+                            <span class="filter-text">Tất cả</span>
+                            <span class="filter-badge" id="allCount">@Model.Count()</span>
+                        </button>
+
+                        @foreach (var category in ViewBag.Categories)
+                        {
+                            var categoryCount = Model.Count(p => p.MaLoai == category.MaLoai);
+                            <button type="button" class="filter-btn" data-category-id="@category.MaLoai">
+                                <span class="filter-icon">
+                                    <i class="bi bi-tag"></i>
+                                </span>
+                                <span class="filter-text">@category.TenLoai</span>
+                                <span class="filter-badge">@categoryCount</span>
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sort Options -->
+            <div class="filter-group">
+                <div class="filter-header">
+                    <i class="bi bi-sort-down me-2"></i>
+                    <span class="filter-title">Sắp xếp</span>
+                </div>
+                <div class="filter-content">
+                    <div class="sort-options">
+                        <div class="sort-dropdown">
+                            <button class="sort-dropdown-btn" type="button" id="sortDropdown" data-bs-toggle="dropdown">
+                                <span class="sort-selected">
+                                    <i class="bi bi-arrow-down-up me-2"></i>
+                                    <span id="selectedSortText">Mặc định</span>
+                                </span>
+                                <i class="bi bi-chevron-down dropdown-arrow"></i>
+                            </button>
+                            <ul class="dropdown-menu sort-dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item sort-option active" href="#" data-sort-value="newest">
+                                        <i class="bi bi-clock me-2"></i>
+                                        <span>Mới nhất</span>
+                                        <i class="bi bi-check-lg check-icon"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item sort-option" href="#" data-sort-value="priceAsc">
+                                        <i class="bi bi-arrow-up me-2"></i>
+                                        <span>Giá tăng dần</span>
+                                        <i class="bi bi-check-lg check-icon"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item sort-option" href="#" data-sort-value="priceDesc">
+                                        <i class="bi bi-arrow-down me-2"></i>
+                                        <span>Giá giảm dần</span>
+                                        <i class="bi bi-check-lg check-icon"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item sort-option" href="#" data-sort-value="name">
+                                        <i class="bi bi-sort-alpha-down me-2"></i>
+                                        <span>Tên A-Z</span>
+                                        <i class="bi bi-check-lg check-icon"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item sort-option" href="#" data-sort-value="popular">
+                                        <i class="bi bi-star me-2"></i>
+                                        <span>Phổ biến</span>
+                                        <i class="bi bi-check-lg check-icon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Filters Display -->
+            <div class="active-filters" id="activeFilters">
+                <!-- Active filters will be displayed here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Indicator -->
+<div class="loading-indicator" id="loadingIndicator">
+    <div class="loading-spinner"></div>
+    <span class="loading-text">Đang tải sản phẩm...</span>
+</div>
+
+<!-- Product Grid Container -->
+<div id="productGridContainer" class="product-grid-container">
+    @await Html.PartialAsync("_ProductGridPartial", Model)
+</div>
+
+<style>
+    /* Modern Filter Section */
+    .modern-filter-section {
+        background: var(--surface-color);
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--gray-200);
+        margin-bottom: 2rem;
+        padding: 1.5rem 0;
+        position: sticky;
+        top: 140px; /* Below navbar */
+        z-index: 1010;
+        backdrop-filter: blur(10px);
+    }
+
+    .filter-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-group {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .filter-header {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        color: var(--text-color);
+        white-space: nowrap;
+    }
+
+    .filter-title {
+        font-size: 0.9rem;
+    }
+
+    .filter-content {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Category Filters */
+    .category-filters {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        border: 1px solid var(--gray-300);
+        border-radius: 50px;
+        background: var(--surface-color);
+        color: var(--text-color);
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+    .filter-icon {
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+
+    .filter-text {
+        font-weight: 500;
+    }
+
+    .filter-badge {
+        background: var(--gray-200);
+        color: var(--text-muted);
+        border-radius: 10px;
+        padding: 0.1rem 0.5rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+        min-width: 24px;
+        text-align: center;
+    }
+
+    .filter-btn.active .filter-badge {
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+
+    /* Sort Options */
+    .sort-options {
+        position: relative;
+    }
+
+    .sort-dropdown {
+        position: relative;
+    }
+
+    .sort-dropdown-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        border: 1px solid var(--gray-300);
+        border-radius: 50px;
+        background: var(--surface-color);
+        color: var(--text-color);
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+        .sort-dropdown-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+    .sort-selected {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .dropdown-arrow {
+        font-size: 0.7rem;
+        transition: transform 0.3s ease;
+    }
+
+    .sort-dropdown-btn.show .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    .sort-dropdown-menu {
+        border: none;
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-xl);
+        padding: 0.5rem;
+        min-width: 200px;
+        border: 1px solid var(--gray-200);
+        background: var(--surface-color);
+    }
+
+    .sort-option {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        border-radius: var(--border-radius);
+        margin: 0.1rem 0;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+        .sort-option:hover {
+            background: var(--primary-light);
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .sort-option.active {
+            background: var(--primary-light);
+            color: var(--primary-color);
+        }
+
+    .check-icon {
+        color: var(--primary-color);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .sort-option.active .check-icon {
+        opacity: 1;
+    }
+
+    /* Active Filters */
+    .active-filters {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-left: auto;
+    }
+
+    .active-filter-tag {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.8rem;
+        background: var(--primary-light);
+        color: var(--primary-color);
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .active-filter-remove {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        cursor: pointer;
+        padding: 0.1rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+    }
+
+        .active-filter-remove:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+    /* Loading Indicator */
+    .loading-indicator {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem;
+        background: var(--surface-color);
+        border-radius: var(--border-radius-lg);
+        margin-bottom: 2rem;
+    }
+
+        .loading-indicator.show {
+            display: flex;
+        }
+
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid var(--gray-200);
+        border-top: 3px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 1rem;
+    }
+
+    .loading-text {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+
+    /* Product Grid Container */
+    .product-grid-container {
+        min-height: 400px;
+    }
+
+    /* Mobile Responsive */
+    @@media (max-width: 991.98px) {
+        .modern-filter-section {
+            position: static;
+            top: auto;
+        }
+
+        .filter-container {
+            gap: 1rem;
+        }
+
+        .filter-group {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .category-filters {
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            width: 100%;
+        }
+
+            .category-filters::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .category-filters::-webkit-scrollbar-track {
+                background: var(--gray-100);
+                border-radius: 2px;
+            }
+
+            .category-filters::-webkit-scrollbar-thumb {
+                background: var(--gray-300);
+                border-radius: 2px;
+            }
+
+                .category-filters::-webkit-scrollbar-thumb:hover {
+                    background: var(--gray-400);
+                }
+    }
+
+    @@media (max-width: 767.98px) {
+        .filter-container {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.5rem;
+        }
+
+        .filter-group {
+            width: 100%;
+        }
+
+        .active-filters {
+            margin-left: 0;
+            justify-content: flex-start;
+        }
+
+        .category-filters {
+            flex-wrap: nowrap;
+        }
+    }
+
+    @@media (max-width: 575.98px) {
+        .modern-filter-section {
+            margin: 0 -1rem 2rem;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+        }
+
+        .filter-btn, .sort-dropdown-btn {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.8rem;
+        }
+
+        .filter-badge {
+            font-size: 0.65rem;
+            min-width: 20px;
+        }
+    }
+
+    /* Animation */
+    @@keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Smooth transitions for product grid */
+    .product-grid-container {
+        transition: opacity 0.3s ease;
+    }
+
+        .product-grid-container.loading {
+            opacity: 0.6;
+        }
+</style>
+
+<script>
+    // Global variables
+    let currentCategory = 0;
+    let currentSort = 'newest';
+    let isLoading = false;
+
+    // Initialize when document is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeFilters();
+        updateActiveFilters();
+    });
+
+    // Initialize filter functionality
+    function initializeFilters() {
+        // Category filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (isLoading) return;
+
+                const categoryId = parseInt(this.dataset.categoryId);
+                filterByCategory(categoryId, this);
+            });
+        });
+
+        // Sort options
+        document.querySelectorAll('.sort-option').forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (isLoading) return;
+
+                const sortValue = this.dataset.sortValue;
+                sortProducts(sortValue, this);
+            });
+        });
+
+        // Initialize tooltips if needed
+        if (typeof bootstrap !== 'undefined') {
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        }
+    }
+
+    // Filter by category
+    function filterByCategory(categoryId, element) {
+        // Update active state
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        element.classList.add('active');
+
+        currentCategory = categoryId;
+        loadProducts();
+    }
+
+    // Sort products
+    function sortProducts(sortValue, element) {
+        // Update active state
+        document.querySelectorAll('.sort-option').forEach(option => {
+            option.classList.remove('active');
+        });
+        element.classList.add('active');
+
+        // Update dropdown text
+        const selectedText = element.querySelector('span').textContent;
+        document.getElementById('selectedSortText').textContent = selectedText;
+
+        currentSort = sortValue;
+        loadProducts();
+    }
+
+    // Load products with current filters
+    function loadProducts() {
+        if (isLoading) return;
+
+        isLoading = true;
+
+        // Show loading indicator
+        document.getElementById('loadingIndicator').classList.add('show');
+        document.getElementById('productGridContainer').classList.add('loading');
+
+        // Update active filters display
+        updateActiveFilters();
+
+        // AJAX request
+        $.ajax({
+            url: '@Url.Action("GetProductsByCategory", "Home")',
+            type: 'GET',
+            data: {
+                categoryId: currentCategory,
+                sort: currentSort,
+                page: 1,
+                pageSize: 24
+            },
+            success: function(result) {
+                $('#productGridContainer').html(result);
+
+                // Re-initialize any product-specific scripts
+                if (window.initializeProductCards) {
+                    window.initializeProductCards();
+                }
+
+                // Refresh animations if using AOS
+                if (window.AOS) {
+                    AOS.refresh();
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error loading products:', error);
+                $('#productGridContainer').html(`
+                    <div class="empty-state text-center py-5">
+                        <div class="empty-icon mb-4">
+                            <i class="bi bi-exclamation-triangle display-1 text-warning"></i>
+                        </div>
+                        <h4 class="empty-title text-muted mb-3">Lỗi tải sản phẩm</h4>
+                        <p class="empty-text text-muted mb-4">Đã có lỗi xảy ra khi tải sản phẩm. Vui lòng thử lại.</p>
+                        <button class="btn btn-primary" onclick="loadProducts()">
+                            <i class="bi bi-arrow-clockwise me-2"></i>Thử lại
+                        </button>
+                    </div>
+                `);
+            },
+            complete: function() {
+                isLoading = false;
+                document.getElementById('loadingIndicator').classList.remove('show');
+                document.getElementById('productGridContainer').classList.remove('loading');
+            }
+        });
+    }
+
+    // Update active filters display
+    function updateActiveFilters() {
+        const activeFiltersContainer = document.getElementById('activeFilters');
+        activeFiltersContainer.innerHTML = '';
+
+        // Add category filter if not "All"
+        if (currentCategory !== 0) {
+            const activeCategoryBtn = document.querySelector(`.filter-btn[data-category-id="${currentCategory}"]`);
+            if (activeCategoryBtn) {
+                const categoryName = activeCategoryBtn.querySelector('.filter-text').textContent;
+                const filterTag = createActiveFilterTag('category', categoryName, 'Danh mục: ');
+                activeFiltersContainer.appendChild(filterTag);
+            }
+        }
+
+        // Add sort filter if not default
+        if (currentSort !== 'newest') {
+            const activeSortOption = document.querySelector(`.sort-option[data-sort-value="${currentSort}"]`);
+            if (activeSortOption) {
+                const sortName = activeSortOption.querySelector('span').textContent;
+                const filterTag = createActiveFilterTag('sort', sortName, 'Sắp xếp: ');
+                activeFiltersContainer.appendChild(filterTag);
+            }
+        }
+    }
+
+    // Create active filter tag
+    function createActiveFilterTag(type, value, label) {
+        const tag = document.createElement('div');
+        tag.className = 'active-filter-tag';
+        tag.innerHTML = `
+            <span>${label}${value}</span>
+            <button class="active-filter-remove" onclick="removeFilter('${type}')">
+                <i class="bi bi-x"></i>
+            </button>
+        `;
+        return tag;
+    }
+
+    // Remove specific filter
+    function removeFilter(type) {
+        if (type === 'category') {
+            // Reset to "All" category
+            const allCategoryBtn = document.querySelector('.filter-btn[data-category-id="0"]');
+            if (allCategoryBtn) {
+                filterByCategory(0, allCategoryBtn);
+            }
+        } else if (type === 'sort') {
+            // Reset to default sort
+            const defaultSortOption = document.querySelector('.sort-option[data-sort-value="newest"]');
+            if (defaultSortOption) {
+                sortProducts('newest', defaultSortOption);
+            }
+        }
+    }
+
+    // Clear all filters
+    function clearAllFilters() {
+        // Reset category
+        const allCategoryBtn = document.querySelector('.filter-btn[data-category-id="0"]');
+        if (allCategoryBtn) {
+            filterByCategory(0, allCategoryBtn);
+        }
+
+        // Reset sort
+        const defaultSortOption = document.querySelector('.sort-option[data-sort-value="newest"]');
+        if (defaultSortOption) {
+            sortProducts('newest', defaultSortOption);
+        }
+    }
+</script>
