@@ -1,0 +1,30 @@
+﻿@model Project_02.Models.SanPham
+
+<div class="container mt-4">
+    <h2>Thêm sản phẩm</h2>
+
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label">Tên SP</label>
+            <input asp-for="TenSp" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mô tả</label>
+            <textarea asp-for="MoTa" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Giá</label>
+            <input asp-for="DonGia" type="number" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Số lượng</label>
+            <input asp-for="SoLuong" type="number" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ảnh sản phẩm</label>
+            <input type="file" name="HinhAnhFile" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success">Lưu</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>

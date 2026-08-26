@@ -1,0 +1,85 @@
+﻿/* ========== SOCIAL NAVBAR ========== */
+.social-navbar {
+    background: white;
+    padding: 4px 10px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.social-navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Shop name căn giữa */
+.shop-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.shop-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff5722;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin: 0;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.shop-title:hover {
+    transform: scale(1.1);
+    color: #e91e63;
+}
+
+/* MXH icons */
+.social-navbar .nav-link {
+    padding: 2px 6px;
+    color: #fff;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.social-navbar i {
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.social-navbar i:hover {
+    transform: scale(1.2);
+}
+
+.bi-facebook { color: #1877f2; }
+.bi-tiktok { color: black; }
+.bi-youtube { color: #ff0000; }
+.bi-github { color: #333; }
+
+/* Link đăng nhập */
+.login-link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    margin-left: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.login-link:hover {
+    color: #ffc107;
+}
+
+/* ========== CATEGORY ========== */
+.categories.bg2 {
+    background-color: #E8F5E9;
+    padding: 15px;
+    border-radius: 0;
+    margin-top: 0;
+}

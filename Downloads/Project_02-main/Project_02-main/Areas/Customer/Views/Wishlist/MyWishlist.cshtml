@@ -1,0 +1,232 @@
+﻿@model List<Project_02.Models.ProductWishlistDto>
+@{
+    ViewData["Title"] = "Sản phẩm yêu thích";
+    var isLoggedIn = Context.Session.GetInt32("MaKh") != null;
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><i class="bi bi-heart-fill text-danger me-2"></i>Sản phẩm yêu thích</h2>
+        <div>
+            <button id="selectAllBtn" class="btn btn-outline-secondary btn-sm me-2">
+                <i class="bi bi-check-square me-1"></i>Chọn tất cả
+            </button>
+            <button id="unselectAllBtn" class="btn btn-outline-secondary btn-sm me-2">
+                <i class="bi bi-square me-1"></i>Bỏ chọn
+            </button>
+            <a href="/Customer" class="btn btn-outline-primary btn-sm">
+                <i class="bi bi-arrow-left me-2"></i>Tiếp tục mua sắm
+            </a>
+        </div>
+    </div>
+
+    @if (!isLoggedIn)
+    {
+        <div class="alert alert-warning text-center py-4">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            Vui lòng <a href="/" class="alert-link">đăng nhập</a> để xem sản phẩm yêu thích.
+        </div>
+    }
+    else if (Model == null || !Model.Any())
+    {
+        <div class="text-center py-5">
+            <i class="bi bi-heart text-muted" style="font-size: 4rem;"></i>
+            <h4 class="mt-3 text-muted">Chưa có sản phẩm yêu thích</h4>
+            <a href="/Customer" class="btn btn-primary mt-3"><i class="bi bi-bag me-2"></i>Khám phá sản phẩm</a>
+        </div>
+    }
+    else
+    {
+        <form id="wishlistForm">
+            @Html.AntiForgeryToken()
+            <div class="card shadow-sm">
+                <div class="card-header bg-light d-flex justify-content-between">
+                    <div class="form-check mb-0">
+                        <input type="checkbox" id="checkAll" class="form-check-input" />
+                        <label for="checkAll" class="form-check-label fw-bold">Chọn tất cả (@Model.Count sản phẩm)</label>
+                    </div>
+                    <div>
+                        <button id="removeSelectedBtn" type="button" class="btn btn-outline-danger btn-sm me-2">
+                            <i class="bi bi-trash me-1"></i>Xóa đã chọn
+                        </button>
+                        <button id="checkoutSelectedBtn" type="button" class="btn btn-primary btn-sm">
+                            <i class="bi bi-cart-check me-1"></i>Thanh toán đã chọn
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body p-0">
+                    <table class="table table-hover mb-0 align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="text-center">Chọn</th>
+                                <th>Hình</th>
+                                <th>Tên sản phẩm</th>
+                                <th class="text-center">Giá</th>
+                                <th class="text-center">Số lượng</th>
+                                <th class="text-center">Tồn kho</th>
+                                <th class="text-center">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr data-id="@item.ProductId" class="@(item.Stock <= 0 ? "table-warning" : "")">
+                                    <td class="text-center">
+                                        <input type="checkbox" class="form-check-input product-checkbox"
+                                               value="@item.ProductId"
+                                               data-price="@item.Price" data-name="@item.ProductName"
+                                               data-image="@item.Image" data-stock="@item.Stock"
+                                               @(item.Stock <= 0 ? "disabled" : "") />
+                                    </td>
+                                    <td>
+                                        <img src="@(string.IsNullOrEmpty(item.Image) ? "/images/placeholder.png" : "/images/sanpham/" + item.Image)"
+                                             style="width:60px;height:60px;object-fit:cover;" class="rounded" />
+                                    </td>
+                                    <td>
+                                        <h6 class="mb-1">@item.ProductName</h6>
+                                        <small class="text-muted">@item.Category</small>
+                                    </td>
+                                    <td class="text-center text-danger fw-bold">@String.Format("{0:N0} ₫", item.Price)</td>
+                                    <td class="text-center">
+                                        @if (item.Stock > 0)
+                                        {
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <button type="button" class="btn btn-outline-secondary btn-sm quantity-decrease"><i class="bi bi-dash"></i></button>
+                                                <input type="number" class="form-control text-center mx-2 quantity-input"
+                                                       value="@item.Quantity" min="1" max="@item.Stock" style="width:70px;" />
+                                                <button type="button" class="btn btn-outline-secondary btn-sm quantity-increase"><i class="bi bi-plus"></i></button>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">-</span>
+                                        }
+                                    </td>
+                                    <td class="text-center">
+                                        @if (item.Stock > 0)
+                                        {
+                                            <span class="badge bg-success">@item.Stock</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger">Hết hàng</span>
+                                        }
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="@Url.Action("Details", "Home", new { id = item.ProductId })" class="btn btn-outline-primary btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm remove-wishlist" data-id="@item.ProductId">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+
+        <div class="card shadow-sm mt-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <strong>Sản phẩm đã chọn: <span id="selectedCount">0</span></strong>
+                    <strong>Tổng tiền: <span id="totalAmount" class="text-danger">0 ₫</span></strong>
+                </div>
+                <div class="text-end mt-3">
+                    <button id="finalCheckoutBtn" class="btn btn-primary" disabled>
+                        <i class="bi bi-credit-card me-2"></i>Thanh toán ngay
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Styles {
+    <style>
+        .table-hover tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+        }
+
+        .quantity-input {
+            width: 70px !important;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        $(function () {
+            let selectedProducts = [];
+
+            function updateSummary() {
+                selectedProducts = [];
+                let total = 0;
+                $('.product-checkbox:checked').each(function () {
+                    const row = $(this).closest('tr');
+                    const price = parseFloat($(this).data('price'));
+                    const qty = parseInt(row.find('.quantity-input').val());
+                    total += price * qty;
+                    selectedProducts.push($(this).val());
+                });
+                $('#selectedCount').text(selectedProducts.length);
+                $('#totalAmount').text(total.toLocaleString('vi-VN') + ' ₫');
+                $('#finalCheckoutBtn').prop('disabled', selectedProducts.length === 0);
+            }
+
+            $('#checkAll').change(function () {
+                $('.product-checkbox:not(:disabled)').prop('checked', $(this).prop('checked'));
+                updateSummary();
+            });
+
+            $(document).on('change', '.product-checkbox, .quantity-input', updateSummary);
+
+            $('#selectAllBtn').click(() => { $('#checkAll').prop('checked', true).trigger('change'); });
+            $('#unselectAllBtn').click(() => { $('#checkAll').prop('checked', false).trigger('change'); });
+
+            $('#removeSelectedBtn').click(() => {
+                if (selectedProducts.length === 0)
+                    return Swal.fire('Thông báo', 'Vui lòng chọn sản phẩm để xóa', 'info');
+
+                Swal.fire({
+                    title: 'Xác nhận xóa',
+                    text: 'Bạn có chắc muốn xóa sản phẩm đã chọn?',
+                    icon: 'warning', showCancelButton: true, confirmButtonText: 'Xóa', cancelButtonText: 'Hủy'
+                }).then(result => {
+                    if (result.isConfirmed) {
+                        $.post('@Url.Action("RemoveMultipleFromWishlist", "Wishlist", new { area = "Customer" })',
+                            { productIds: selectedProducts },
+                            (res) => { if (res.success) location.reload(); else Swal.fire('Lỗi', res.message, 'error'); });
+                    }
+                });
+            });
+
+            $('#finalCheckoutBtn, #checkoutSelectedBtn').click(() => {
+                if (selectedProducts.length === 0)
+                    return Swal.fire('Thông báo', 'Chọn ít nhất 1 sản phẩm để thanh toán', 'info');
+                Swal.fire('Thành công', 'Tiến hành thanh toán các sản phẩm đã chọn!', 'success');
+            });
+
+            $('.remove-wishlist').click(function () {
+                const id = $(this).data('id');
+                Swal.fire({
+                    title: 'Xác nhận', text: 'Xóa sản phẩm này khỏi yêu thích?',
+                    icon: 'warning', showCancelButton: true, confirmButtonText: 'Xóa'
+                }).then(res => {
+                    if (res.isConfirmed) {
+                        $.post('@Url.Action("RemoveFromWishlist", "Wishlist", new { area = "Customer" })',
+                            { productId: id }, (r) => { if (r.success) location.reload(); });
+                    }
+                });
+            });
+        });
+    </script>
+}

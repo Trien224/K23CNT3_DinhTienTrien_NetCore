@@ -1,0 +1,38 @@
+﻿@model Project_02.Models.SanPham
+
+<div class="container mt-4">
+    <h2>Sửa sản phẩm</h2>
+
+    <form asp-action="Edit" enctype="multipart/form-data">
+        <input type="hidden" asp-for="MaSp" />
+        <div class="mb-3">
+            <label class="form-label">Tên SP</label>
+            <input asp-for="TenSp" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mô tả</label>
+            <textarea asp-for="MoTa" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Giá</label>
+            <input asp-for="DonGia" type="number" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Số lượng</label>
+            <input asp-for="SoLuong" type="number" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ảnh hiện tại</label><br />
+            @if (!string.IsNullOrEmpty(Model.HinhAnh))
+            {
+                <img src="~/images/@Model.HinhAnh" width="100" />
+            }
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Chọn ảnh mới (nếu cần)</label>
+            <input type="file" name="HinhAnhFile" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success">Cập nhật</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>

@@ -1,0 +1,142 @@
+﻿@model Project_02.Models.HoaDonDto
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Sửa hóa đơn";
+}
+
+<div class="container d-flex justify-content-center" style="min-height: 100vh;">
+    <div class="card shadow-lg rounded-3" style="max-width: 600px; width: 100%;">
+        <!-- Header -->
+        <div class="card-header bg-warning text-white">
+            <h4><i class="bi bi-pencil-square"></i> @ViewData["Title"]</h4>
+        </div>
+        <div class="card-body">
+            <form id="editForm">
+                <input type="hidden" id="MaHd" value="@Model.MaHd" />
+
+                <!-- Khách hàng -->
+                <div class="mb-3">
+                    <label class="fw-bold">Khách hàng</label>
+                    <select id="MaKh" class="form-control" asp-items="ViewBag.MaKh"></select>
+                </div>
+
+                <!-- Voucher -->
+                <div class="mb-3">
+                    <label class="fw-bold">Voucher</label>
+                    <select id="MaVoucher" class="form-control" asp-items="ViewBag.MaVoucher">
+                        <option value="">-- Không dùng --</option>
+                    </select>
+                </div>
+
+                <!-- Địa chỉ & SĐT giao hàng -->
+                <div class="mb-3">
+                    <label class="fw-bold">Địa chỉ giao hàng</label>
+                    <input id="DiaChiGiaoHang" class="form-control" value="@Model.DiaChiGiaoHang" />
+                </div>
+                <div class="mb-3">
+                    <label class="fw-bold">SĐT giao hàng</label>
+                    <input id="SdtgiaoHang" class="form-control" value="@Model.SdtgiaoHang" />
+                </div>
+
+                <!-- Ghi chú -->
+                <div class="mb-3">
+                    <label class="fw-bold">Ghi chú</label>
+                    <textarea id="GhiChu" class="form-control">@Model.GhiChu</textarea>
+                </div>
+
+                <!-- Tổng tiền, giảm giá, thành tiền -->
+                <div class="mb-3 row">
+                    <div class="col">
+                        <label>Tổng tiền</label>
+                        <input id="TongTien" class="form-control" value="@Model.TongTien" readonly />
+                    </div>
+                    <div class="col">
+                        <label>Tiền giảm</label>
+                        <input id="TienGiamGia" class="form-control" value="@Model.TienGiamGia" readonly />
+                    </div>
+                    <div class="col">
+                        <label>Thành tiền</label>
+                        <input id="ThanhTien" class="form-control" value="@Model.ThanhTien" readonly />
+                    </div>
+                </div>
+
+                <!-- Trạng thái -->
+                <div class="mb-3">
+                    <label class="fw-bold">Trạng thái</label>
+                    <select id="TrangThai" class="form-control" asp-items="ViewBag.TrangThaiList"></select>
+                </div>
+
+                <div class="text-end">
+                    <button type="button" id="btnSave" class="btn btn-primary">Cập nhật</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary ms-2">Quay lại</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(function(){
+            // Tính thành tiền khi voucher thay đổi
+            $("#MaVoucher").change(function(){
+                var maVoucher = $(this).val();
+                var tongTien = parseFloat($("#TongTien").val()) || 0;
+
+                if(!maVoucher){
+                    $("#TienGiamGia").val(0);
+                    $("#ThanhTien").val(tongTien);
+                    return;
+                }
+
+                $.getJSON('@Url.Action("TinhVoucher", "HoaDons")',{ maVoucher, tongTien }, function(res){
+                    if(res.success){
+                        $("#TienGiamGia").val(res.tienGiam);
+                        $("#ThanhTien").val(res.thanhTien);
+                    } else {
+                        Swal.fire("Lỗi", res.message, "error");
+                        $("#TienGiamGia").val(0);
+                        $("#ThanhTien").val(tongTien);
+                    }
+                });
+            });
+
+            // Lưu Ajax
+            $("#btnSave").click(function(){
+                var dto = {
+                    MaHd: parseInt($("#MaHd").val()),
+                    MaKh: parseInt($("#MaKh").val()),
+                    MaVoucher: $("#MaVoucher").val() || null,
+                    DiaChiGiaoHang: $("#DiaChiGiaoHang").val(),
+                    SdtgiaoHang: $("#SdtgiaoHang").val(),
+                    GhiChu: $("#GhiChu").val(),
+                    TongTien: parseFloat($("#TongTien").val()),
+                    TienGiamGia: $("#TienGiamGia").val() ? parseFloat($("#TienGiamGia").val()) : null,
+                    ThanhTien: parseFloat($("#ThanhTien").val()),
+                    TrangThai: parseInt($("#TrangThai").val())
+                };
+
+                $.ajax({
+                    url: '@Url.Action("EditAjax", "HoaDons")',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(dto),
+                    success: function(res){
+                        if(res.success){
+                            Swal.fire("Thành công", res.message, "success")
+                                .then(()=> location.href='@Url.Action("Index", "HoaDons")');
+                        } else {
+                            Swal.fire("Lỗi", res.message, "error");
+                        }
+                    },
+                    error: function(){
+                        Swal.fire("Lỗi", "Có lỗi xảy ra khi gửi dữ liệu.", "error");
+                    }
+                });
+            });
+        });
+    </script>
+}

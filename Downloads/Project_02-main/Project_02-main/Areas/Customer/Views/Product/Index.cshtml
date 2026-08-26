@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Project_02.Models.SanPham>
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+<div class="container mt-4">
+    <h2>Danh sách sản phẩm</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img src="~/images/@item.HinhAnh" class="card-img-top" alt="@item.TenSp" />
+                    <div class="card-body">
+                        <h5>@item.TenSp</h5>
+                        <p class="text-danger">@item.DonGia.ToString("n0") VNĐ</p>
+                        <a href="@Url.Action("Details", "Product", new { area = "Customer", id = item.MaSp })"
+                           class="btn btn-primary btn-sm">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

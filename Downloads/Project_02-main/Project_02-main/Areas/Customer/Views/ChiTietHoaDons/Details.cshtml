@@ -1,0 +1,52 @@
+﻿@model Project_02.Models.ChiTietHoaDon
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Chi tiết hóa đơn";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg rounded-3">
+                <div class="card-header bg-info text-white text-center">
+                    <h4 class="mb-0"><i class="bi bi-eye"></i> @ViewData["Title"]</h4>
+                </div>
+                <div class="card-body p-4">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4 fw-bold">Mã chi tiết</dt>
+                        <dd class="col-sm-8">@Model.MaCthd</dd>
+
+                        <dt class="col-sm-4 fw-bold">Sản phẩm</dt>
+                        <dd class="col-sm-8">@Model.MaSpNavigation?.TenSp</dd>
+
+                        <dt class="col-sm-4 fw-bold">Số lượng</dt>
+                        <dd class="col-sm-8">@Model.SoLuong</dd>
+
+                        <dt class="col-sm-4 fw-bold">Đơn giá</dt>
+                        <dd class="col-sm-8">@String.Format("{0:N0} ₫", Model.DonGia)</dd>
+
+                        <dt class="col-sm-4 fw-bold">Thành tiền</dt>
+                        <dd class="col-sm-8 text-danger fw-bold">@String.Format("{0:N0} ₫", Model.ThanhTien)</dd>
+
+                        <dt class="col-sm-4 fw-bold">Hóa đơn</dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-secondary">HD-@Model.MaHdNavigation?.MaHd</span>
+                            <div class="small text-muted">
+                                @Model.MaHdNavigation?.MaKhNavigation?.HoTen
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Quay lại
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@Model.MaCthd" class="btn btn-warning text-white">
+                        <i class="bi bi-pencil-square"></i> Sửa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

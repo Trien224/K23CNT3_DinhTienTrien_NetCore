@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Welcome, @Context.Session.GetString("AdminEmail")</h1>
+<p>This is the Admin Dashboard.</p>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<div class="container mt-5">
+    <h2>📊 Bảng điều khiển</h2>
+    <hr />
+    <div class="row text-center">
+        <div class="col-6 col-md-3">
+            <div class="card bg-primary text-white mb-3">
+                <div class="card-body">
+                    <i class="bi bi-box-seam fs-2"></i>
+                    <h4>@ViewBag.TotalSanPham</h4>
+                    <p>Sản phẩm</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card bg-success text-white mb-3">
+                <div class="card-body">
+                    <i class="bi bi-people fs-2"></i>
+                    <h4>@ViewBag.TotalKhachHang</h4>
+                    <p>Khách hàng</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card bg-warning text-white mb-3">
+                <div class="card-body">
+                    <i class="bi bi-receipt fs-2"></i>
+                    <h4>@ViewBag.TotalHoaDon</h4>
+                    <p>Hóa đơn</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card bg-danger text-white mb-3">
+                <div class="card-body">
+                    <i class="bi bi-shield-lock fs-2"></i>
+                    <h4>@ViewBag.TotalQTV</h4>
+                    <p>Quản trị viên</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

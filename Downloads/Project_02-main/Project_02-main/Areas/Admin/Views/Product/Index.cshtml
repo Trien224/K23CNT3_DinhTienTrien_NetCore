@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Project_02.Models.SanPham>
+
+<div class="container mt-4">
+    <h2>Danh sách sản phẩm</h2>
+    <a class="btn btn-success mb-3" href="@Url.Action("Create")">+ Thêm mới</a>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Tên SP</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Ảnh</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TenSp</td>
+                    <td>@item.DonGia.ToString("N0") đ</td>
+                    <td>@item.SoLuong</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.HinhAnh))
+                        {
+                            <img src="~/images/@item.HinhAnh" width="80" />
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" href="@Url.Action("Edit", new { id = item.MaSp })">Sửa</a>
+                        <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", new { id = item.MaSp })"
+                           onclick="return confirm('Bạn có chắc chắn muốn xóa?');">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

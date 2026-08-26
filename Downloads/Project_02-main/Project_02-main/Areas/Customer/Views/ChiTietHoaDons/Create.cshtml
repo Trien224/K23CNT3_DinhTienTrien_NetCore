@@ -1,0 +1,91 @@
+﻿@model Project_02.Models.ChiTietHoaDon
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Thêm chi tiết hóa đơn";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0"><i class="bi bi-plus-circle"></i> @ViewData["Title"]</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create" method="post">
+                        <!-- Hóa đơn -->
+                        <div class="mb-3">
+                            <label class="fw-bold">Hóa đơn</label>
+                            <select asp-for="MaHd" class="form-control" asp-items="@(ViewData["MaHd"] as SelectList)"></select>
+                        </div>
+
+                        <!-- Sản phẩm -->
+                        <div class="mb-3">
+                            <label class="fw-bold">Sản phẩm</label>
+                            <select asp-for="MaSp" class="form-control" asp-items="@(ViewData["MaSp"] as SelectList)"></select>
+                        </div>
+
+                        <!-- Số lượng -->
+                        <div class="mb-3">
+                            <label asp-for="SoLuong" class="fw-bold">Số lượng</label>
+                            <input asp-for="SoLuong" class="form-control" id="SoLuong" />
+                        </div>
+
+                        <!-- Đơn giá (readonly) -->
+                        <div class="mb-3">
+                            <label class="fw-bold">Đơn giá</label>
+                            <input type="text" class="form-control" id="DonGiaDisplay" readonly />
+                        </div>
+
+                        <!-- Thành tiền -->
+                        <div class="mb-3">
+                            <label class="fw-bold">Thành tiền</label>
+                            <input type="text" class="form-control" id="ThanhTienDisplay" readonly />
+                            <input type="hidden" asp-for="ThanhTien" id="ThanhTienHidden" />
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-save"></i> Lưu
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-secondary ms-2">
+                                <i class="bi bi-arrow-left-circle"></i> Quay lại
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        async function updateDonGia() {
+            var maSp = document.getElementById("MaSp").value;
+            if (maSp) {
+                const response = await fetch(`/Customer/ChiTietHoaDons/GetDonGia?maSp=${maSp}`);
+                if (response.ok) {
+                    const donGia = await response.json();
+                    document.getElementById("DonGiaDisplay").value = donGia;
+                    updateThanhTien();
+                }
+            }
+        }
+
+        function updateThanhTien() {
+            var soLuong = parseFloat(document.getElementById("SoLuong").value) || 0;
+            var donGia = parseFloat(document.getElementById("DonGiaDisplay").value) || 0;
+            var thanhTien = soLuong * donGia;
+
+            document.getElementById("ThanhTienDisplay").value = thanhTien.toLocaleString('vi-VN');
+            document.getElementById("ThanhTienHidden").value = thanhTien;
+        }
+
+        document.getElementById("SoLuong").addEventListener("input", updateThanhTien);
+        document.getElementById("MaSp").addEventListener("change", updateDonGia);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+}

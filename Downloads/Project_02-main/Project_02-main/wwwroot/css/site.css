@@ -1,0 +1,112 @@
+﻿/* ========== RESET cơ bản ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ========== BODY ========== */
+body {
+    background: url('https://c.pxhere.com/photos/98/a1/leaf_green_line_vein-1286313.jpg!d') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ========== HEADER chung ========== */
+header {
+    background: rgba(255, 255, 255, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+}
+
+/* ========== NAVBAR chính (_Navbar.cshtml) ========== */
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0 20px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+    .custom-navbar .navbar-brand img {
+        height: 100px;
+        width: auto;
+        border-radius: 10px;
+        object-fit: contain;
+    }
+
+    .custom-navbar .form-control {
+        border-radius: 20px;
+        height: 40px;
+        border: 2px solid #ff5722;
+        transition: 0.3s;
+    }
+
+        .custom-navbar .form-control:focus {
+            outline: none;
+            border-color: #e91e63;
+            box-shadow: 0 0 6px rgba(233, 30, 99, 0.4);
+        }
+
+/* Links trong navbar */
+.navbar a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #ff5722;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .navbar a:hover {
+        color: #e91e63;
+        transform: scale(1.05);
+    }
+
+.navbar i {
+    font-size: 20px;
+}
+
+/* ========== BANNER chạy ngang ========== */
+.banner {
+    background: linear-gradient(90deg, #ff5722, #ff9800, #ffc107);
+    height: 120px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.banner-img {
+    height: 100px;
+    margin: 0 40px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.marquee {
+    display: flex;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    50% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}

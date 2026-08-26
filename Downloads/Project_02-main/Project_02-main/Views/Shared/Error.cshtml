@@ -1,0 +1,9 @@
+﻿@model Project_02.Models.ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+<h1 class="text-danger">Có lỗi xảy ra</h1>
+@if (Model?.ShowRequestId == true)
+{
+    <p>RequestId: <code>@Model.RequestId</code></p>
+}

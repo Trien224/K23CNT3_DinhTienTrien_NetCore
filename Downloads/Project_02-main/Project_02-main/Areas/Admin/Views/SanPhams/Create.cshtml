@@ -1,0 +1,119 @@
+﻿@model Project_02.Models.SanPham
+
+@{
+    ViewData["Title"] = "Thêm sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center" style="min-height: 100vh;">
+    <div class="card shadow-lg border-0 rounded-3" style="max-width: 800px; width: 100%;">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">📌@ViewData["Title"]</h4>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Create" enctype="multipart/form-data" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <!-- Tên sản phẩm -->
+                <div class="mb-3">
+                    <label asp-for="TenSp" class="form-label fw-bold">
+                        <i class="bi bi-tag"></i> Tên sản phẩm
+                    </label>
+                    <input asp-for="TenSp" class="form-control" placeholder="Nhập tên sản phẩm..." />
+                    <span asp-validation-for="TenSp" class="text-danger"></span>
+                </div>
+
+                <!-- Mô tả -->
+                <div class="mb-3">
+                    <label asp-for="MoTa" class="form-label fw-bold">
+                        <i class="bi bi-file-text"></i> Mô tả
+                    </label>
+                    <textarea asp-for="MoTa" class="form-control" rows="3" placeholder="Nhập mô tả sản phẩm..."></textarea>
+                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                </div>
+
+                <!-- Giá & số lượng -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="DonGia" class="form-label fw-bold">
+                            <i class="bi bi-currency-dollar"></i> Đơn giá
+                        </label>
+                        <input asp-for="DonGia" type="number" class="form-control" placeholder="Giá (VNĐ)" min="0" step="1000" />
+                        <span asp-validation-for="DonGia" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="SoLuong" class="form-label fw-bold">
+                            <i class="bi bi-box"></i> Số lượng
+                        </label>
+                        <input asp-for="SoLuong" type="number" class="form-control" placeholder="Số lượng tồn kho" min="0" />
+                        <span asp-validation-for="SoLuong" class="text-danger"></span>
+                    </div>
+                </div>
+                <!-- Hình ảnh -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">
+                        <i class="bi bi-image"></i> Hình ảnh sản phẩm
+                    </label>
+                    <!-- name trùng với property UploadImage -->
+                    <input type="file" name="UploadImage" class="form-control" id="fileInput" accept="image/*" />
+                    <div class="mt-2 text-center">
+                        <img id="previewImg" src="~/images/sanpham/logo.png" alt="Preview"
+                             class="img-fluid rounded shadow-sm d-none" style="max-height: 200px;" />
+                    </div>
+                </div>
+                <!-- Loại sản phẩm -->
+                <div class="mb-3">
+                    <label asp-for="MaLoai" class="form-label fw-bold">
+                        <i class="bi bi-list-ul"></i> Loại sản phẩm
+                    </label>
+                    <select asp-for="MaLoai" class="form-select" asp-items="ViewBag.MaLoai">
+                        <option value="">-- Chọn loại sản phẩm --</option>
+                    </select>
+                    <span asp-validation-for="MaLoai" class="text-danger"></span>
+                </div>
+
+                <!-- Giảm giá -->
+                <div class="mb-3">
+                    <label asp-for="PhanTramGiam" class="form-label fw-bold">
+                        <i class="bi bi-percent"></i> Giảm giá
+                    </label>
+                    <input asp-for="PhanTramGiam" type="number" class="form-control" placeholder="% giảm giá (nếu có)" min="0" max="100" />
+                    <span asp-validation-for="PhanTramGiam" class="text-danger"></span>
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Quay lại
+                    </a>
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-plus-circle"></i> Thêm sản phẩm
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+@section Scripts {
+    <script>
+        // Preview ảnh khi chọn file
+        document.getElementById("fileInput").addEventListener("change", function (event) {
+            const [file] = event.target.files;
+            if (file) {
+                const preview = document.getElementById("previewImg");
+                       preview.src = URL.createObjectURL(file);
+        preview.onload = () => URL.revokeObjectURL(preview.src); // Giải phóng bộ nhớ
+        preview.classList.remove("d-none");
+
+            }
+        });
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
